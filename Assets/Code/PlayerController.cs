@@ -17,8 +17,8 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed;
 
     public CharacterStats characterStats;
-    [SerializeField] ParticleSystem hitParticle = null; 
-    
+    [SerializeField] ParticleSystem hitParticle = null;
+
     void Awake()
     {
         movable = GetComponent<IMovable>();
@@ -56,13 +56,7 @@ public class PlayerController : MonoBehaviour
             movable.SetVector(direction * dashSpeed * characterStats.Speed);
             StartCoroutine(CoolDown());
             StartCoroutine(DashingDuration());
-            
-            
-
         }
-
-
-
     }
 
     private void OnMove(InputAction.CallbackContext context)
