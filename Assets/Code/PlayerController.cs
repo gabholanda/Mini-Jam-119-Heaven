@@ -18,10 +18,10 @@ public class PlayerController : MonoBehaviour
 
     public CharacterStats characterStats;
     [SerializeField]
-    ParticleSystem hitParticle = null; 
-    
+    ParticleSystem hitParticle = null;
+
     public List<AbilityTrigger> copyTriggers;
-    private List<AbilityTrigger> triggers;
+    private List<AbilityTrigger> triggers = new List<AbilityTrigger>();
 
 
     void Awake()
@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
     private void OnAttack(InputAction.CallbackContext context)
     {
         Collider2D[] enemies = Physics2D.OverlapCircleAll(point.position, radius);
-        triggers[0].Fire(new Vector2(1, 0), MouseUtils.GetMousePositionInWorld());
+        triggers[0].Fire(transform.position, MouseUtils.GetMousePositionInWorld());
         for (int i = 0; i < enemies.Length; i++)
         {
             enemies[i].GetComponent<CharacterStats>().CurrentHealth -= characterStats.Damage;
