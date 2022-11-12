@@ -17,12 +17,21 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed;
 
     public CharacterStats characterStats;
-    [SerializeField] ParticleSystem hitParticle = null;
+    
+    [SerializeField]
+    ParticleSystem hitParticle = null;
+
+    public AbilityTrigger meleeAttack;
+
 
     void Awake()
     {
         movable = GetComponent<IMovable>();
         characterStats = GetComponent<CharacterStats>();
+        // The real purpose of a Scriptable Object it is to act as Data Containers
+        // meaning they are a single source of truth which replaces the Singleton Pattern
+        // You guys will learn this when studying about Design Patterns
+        meleeAttack.Initialize(gameObject);
     }
 
     private void OnEnable()
@@ -53,7 +62,7 @@ public class PlayerController : MonoBehaviour
         if (canDash && direction.magnitude != 0)
         {
             canDash = false;
-            movable.SetVector(direction * dashSpeed * characterStats.Speed);
+            movable.SetVector(characterStats.Speed * dashSpeed * direction);
             StartCoroutine(CoolDown());
             StartCoroutine(DashingDuration());
         }
@@ -72,12 +81,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnAttack(InputAction.CallbackContext context)
     {
-        Collider2D[] enemies = Physics2D.OverlapCircleAll(point.position, radius);
-        for (int i = 0; i < enemies.Length; i++)
-        {
-            enemies[i].GetComponent<CharacterStats>().CurrentHealth -= characterStats.Damage;
-            Hit();
-        }
+        meleeAttack.Fire(point.position, MouseUtils.GetMousePositionInWorld());
     }
 
     public void Hit()
