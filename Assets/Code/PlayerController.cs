@@ -17,11 +17,12 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed;
 
     public CharacterStats characterStats;
-
+    
     [SerializeField]
     ParticleSystem hitParticle = null;
 
     public AbilityTrigger meleeAttack;
+
 
     void Awake()
     {
