@@ -69,6 +69,10 @@ public class PlayerController : MonoBehaviour
     {
         direction = context.ReadValue<Vector2>();
         movable.SetVector(direction * characterStats.Speed);
+        if (Mathf.Abs(direction.x) == 1f || Mathf.Abs(direction.y) == 1f)
+        {
+            point.localPosition = direction;
+        }
     }
     private void OnStopMove(InputAction.CallbackContext context)
     {
@@ -103,6 +107,5 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(dashDuration);
         movable.SetVector(direction * characterStats.Speed);
     }
-
 }
 
