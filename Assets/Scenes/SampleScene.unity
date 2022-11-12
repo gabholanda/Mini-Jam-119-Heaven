@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 364180990}
   - component: {fileID: 364180989}
   - component: {fileID: 364180991}
-  - component: {fileID: 364180992}
+  - component: {fileID: 364180992
   - component: {fileID: 364180993}
   m_Layer: 0
   m_Name: Player
@@ -256,6 +256,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b24d87c687b401a48afb6fb1868705d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Script: {fileID: 11500000, guid: 832599d315a21a54ba037f8b610a4811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  damage: 0
+  speed: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
