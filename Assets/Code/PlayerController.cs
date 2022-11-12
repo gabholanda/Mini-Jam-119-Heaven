@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed;
 
     public CharacterStats characterStats;
-    
+
     [SerializeField]
     ParticleSystem hitParticle = null;
 
@@ -28,9 +28,6 @@ public class PlayerController : MonoBehaviour
     {
         movable = GetComponent<IMovable>();
         characterStats = GetComponent<CharacterStats>();
-        // The real purpose of a Scriptable Object it is to act as Data Containers
-        // meaning they are a single source of truth which replaces the Singleton Pattern
-        // You guys will learn this when studying about Design Patterns
         meleeAttack.Initialize(gameObject);
     }
 
