@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         reader.Move.performed += OnMove;
+        reader.Move.canceled += OnStopMove;
         reader.Attack.performed += OnAttack;
         reader.Move.Enable();
         reader.Attack.Enable();
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         reader.Move.performed -= OnMove;
         reader.Attack.performed -= OnAttack;
+        reader.Move.canceled -= OnStopMove;
         reader.Move.Disable();
         reader.Attack.Disable();
     }
@@ -37,7 +39,11 @@ public class PlayerController : MonoBehaviour
         movable.SetVector(context.ReadValue<Vector2>());
         Debug.Log(context.ReadValue<Vector2>());
     }
-
+    private void OnStopMove(InputAction.CallbackContext context)
+    {
+        movable.SetVector(new Vector2(0, 0));
+        Debug.Log(context.ReadValue<Vector2>());
+    }
     private void OnAttack(InputAction.CallbackContext context)
     {
        Collider2D[] enemies = Physics2D.OverlapCircleAll(point.position, radius);
