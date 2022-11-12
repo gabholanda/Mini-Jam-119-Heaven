@@ -9,12 +9,15 @@ public class PlayerController : MonoBehaviour
     public Transform point;
     public float radius = 1;
     public IMovable movable;
+
     public Vector2 direction;
     public float dashCooldown;
     public float dashDuration;
     private bool canDash = true;
 
 
+    public CharacterStats characterStats;
+    
     void Awake()
     {
         movable = GetComponent<IMovable>();
