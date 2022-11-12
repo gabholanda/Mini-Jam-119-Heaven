@@ -7,17 +7,17 @@ public class PlayerController : MonoBehaviour
 {
     public InputReader reader;
     public Transform point;
-    public float radius = 1;
     public IMovable movable;
 
+    [Header("Movement")]
     public Vector2 direction;
     public float dashCooldown;
     public float dashDuration;
     private bool canDash = true;
     public float dashSpeed;
 
+    [Header("Stats & Skills")]
     public CharacterStats characterStats;
-
     [SerializeField]
     ParticleSystem hitParticle = null;
 
@@ -89,11 +89,6 @@ public class PlayerController : MonoBehaviour
     {
         hitParticle.Play();
 
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawSphere(point.position, radius);
     }
 
     IEnumerator CoolDown()
