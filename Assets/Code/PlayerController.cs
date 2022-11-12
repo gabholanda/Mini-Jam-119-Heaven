@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public float dashCooldown;
     public float dashDuration;
     private bool canDash = true;
-
+    public float dashSpeed;
 
     public CharacterStats characterStats;
     
@@ -49,12 +49,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnDash(InputAction.CallbackContext context)
     {
-        if (canDash)
+        if (canDash && direction.magnitude != 0)
         {
             canDash = false;
-            movable.SetVector(direction * 10);
+            movable.SetVector(direction * dashSpeed * characterStats.Speed);
             StartCoroutine(CoolDown());
             StartCoroutine(DashingDuration());
+            
+            
+
         }
 
 
@@ -64,11 +67,13 @@ public class PlayerController : MonoBehaviour
     private void OnMove(InputAction.CallbackContext context)
     {
         direction = context.ReadValue<Vector2>();
-        movable.SetVector(direction);
+        movable.SetVector(direction * characterStats.Speed);
     }
     private void OnStopMove(InputAction.CallbackContext context)
     {
-        movable.SetVector(new Vector2(0, 0));
+        direction = new Vector2(0, 0);
+        movable.SetVector(direction * characterStats.Speed);
+
     }
     private void OnAttack(InputAction.CallbackContext context)
     {
@@ -95,7 +100,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator DashingDuration()
     {
         yield return new WaitForSeconds(dashDuration);
-        movable.SetVector(direction);
+        movable.SetVector(direction * characterStats.Speed);
     }
 
 }
