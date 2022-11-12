@@ -5151,6 +5151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5b8e16940bb5e4892a8b76da63519d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1994927462}
+  speed: 1
 --- !u!114 &1366822463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5294,7 +5296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   damage: 20
-  speed: 50
+  speed: 2
 --- !u!114 &1994927464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5344,8 +5346,9 @@ MonoBehaviour:
   point: {fileID: 162693107}
   radius: 0.5
   direction: {x: 0, y: 0}
-  dashCooldown: 0
-  dashDuration: 0
+  dashCooldown: 5
+  dashDuration: 5
+  dashSpeed: 3
   characterStats: {fileID: 0}
   hitParticle: {fileID: 5158829}
 --- !u!212 &1994927467

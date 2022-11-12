@@ -17,11 +17,13 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed;
 
     public CharacterStats characterStats;
+    
     [SerializeField]
     ParticleSystem hitParticle = null;
 
     public List<AbilityTrigger> copyTriggers;
     private List<AbilityTrigger> triggers = new List<AbilityTrigger>();
+
 
 
     void Awake()

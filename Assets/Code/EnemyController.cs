@@ -5,10 +5,14 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public GameObject player;
-    public float speed;
 
     private float distance;
-   
+    public CharacterStats characterStats;
+    void Awake()
+    {
+      
+        characterStats = GetComponent<CharacterStats>();
+    }
     void Update()
     {
         distance = Vector2.Distance(transform.position, player.transform.position);
@@ -20,7 +24,7 @@ public class EnemyController : MonoBehaviour
         if (distance >= 1)
         {
 
-        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, characterStats.Speed * Time.deltaTime);
 
         }
     }
