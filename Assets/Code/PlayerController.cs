@@ -17,12 +17,24 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed;
 
     public CharacterStats characterStats;
-    [SerializeField] ParticleSystem hitParticle = null;
+    
+    [SerializeField]
+    ParticleSystem hitParticle = null;
+
+    public List<AbilityTrigger> copyTriggers;
+    private List<AbilityTrigger> triggers = new List<AbilityTrigger>();
+
+
 
     void Awake()
     {
         movable = GetComponent<IMovable>();
         characterStats = GetComponent<CharacterStats>();
+        // The real purpose of a Scriptable Object it is to act as Data Containers
+        // meaning they are a single source of truth which replaces the Singleton Pattern
+        // You guys will learn this when studying about Design Patterns
+        copyTriggers.ForEach(trigger => triggers.Add(trigger));
+        triggers.ForEach(trigger => trigger.Initialize(gameObject));
     }
 
     private void OnEnable()
@@ -73,6 +85,7 @@ public class PlayerController : MonoBehaviour
     private void OnAttack(InputAction.CallbackContext context)
     {
         Collider2D[] enemies = Physics2D.OverlapCircleAll(point.position, radius);
+        triggers[0].Fire(transform.position, MouseUtils.GetMousePositionInWorld());
         for (int i = 0; i < enemies.Length; i++)
         {
             enemies[i].GetComponent<CharacterStats>().CurrentHealth -= characterStats.Damage;
