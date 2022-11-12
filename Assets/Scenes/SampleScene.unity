@@ -355,6 +355,9 @@ MonoBehaviour:
   reader: {fileID: 11400000, guid: 1cb7ed09902cdaa4b86371b7eddf853c, type: 2}
   point: {fileID: 1385503127}
   radius: 0.5
+  direction: {x: 0, y: 0}
+  dashCooldown: 0
+  dashDuration: 0
   characterStats: {fileID: 0}
   hitParticle: {fileID: 1580973063}
 --- !u!50 &364180992
@@ -501,6 +504,7 @@ GameObject:
   - component: {fileID: 1192142870}
   - component: {fileID: 1192142869}
   - component: {fileID: 1192142872}
+  - component: {fileID: 1192142873}
   m_Layer: 0
   m_Name: Angel
   m_TagString: Untagged
@@ -616,6 +620,18 @@ MonoBehaviour:
   maxHealth: 200
   damage: 20
   speed: 20
+--- !u!114 &1192142873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192142868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea5b8e16940bb5e4892a8b76da63519d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1385503126
 GameObject:
   m_ObjectHideFlags: 0
