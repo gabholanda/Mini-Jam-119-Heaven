@@ -437,7 +437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1569248721}
-  speed: 1
+  characterStats: {fileID: 0}
 --- !u!114 &1192489107
 MonoBehaviour:
   m_ObjectHideFlags: 0
