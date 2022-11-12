@@ -6,11 +6,15 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public InputReader reader;
+    public Transform point;
+    public float radius = 1;
     public IMovable movable;
+    
     void Awake()
     {
         movable = GetComponent<IMovable>();
     }
+    
     private void OnEnable()
     {
         reader.Move.performed += OnMove;
@@ -36,6 +40,16 @@ public class PlayerController : MonoBehaviour
 
     private void OnAttack(InputAction.CallbackContext context)
     {
+       Collider2D[] enemies = Physics2D.OverlapCircleAll(point.position, radius);
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            // TODO: attack our enemies witin the range
+        }
         Debug.Log("I am attacking :)");
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(point.position, radius);
     }
 }
