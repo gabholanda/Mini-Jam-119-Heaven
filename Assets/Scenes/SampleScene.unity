@@ -356,8 +356,9 @@ MonoBehaviour:
   point: {fileID: 1385503127}
   radius: 0.5
   direction: {x: 0, y: 0}
-  dashCooldown: 0
-  dashDuration: 0
+  dashCooldown: 5
+  dashDuration: 0.5
+  dashSpeed: 7
   characterStats: {fileID: 0}
   hitParticle: {fileID: 1580973063}
 --- !u!50 &364180992
@@ -579,7 +580,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
   m_Color: {r: 0, g: 0.85697556, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -617,9 +618,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 832599d315a21a54ba037f8b610a4811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 200
-  damage: 20
-  speed: 20
+  maxHealth: 3
+  damage: 1
+  speed: 1
+
 --- !u!114 &1192142873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -632,6 +634,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5b8e16940bb5e4892a8b76da63519d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 364180988}
+  speed: 1
 --- !u!1 &1385503126
 GameObject:
   m_ObjectHideFlags: 0
