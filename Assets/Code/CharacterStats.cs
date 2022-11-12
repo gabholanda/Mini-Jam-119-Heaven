@@ -3,14 +3,19 @@ using UnityEngine;
 public class CharacterStats : MonoBehaviour
 {
     private int currentHealth;
-    public int CurrentHealth { get { return currentHealth; } set {
-            if(value == 0)
+    public int CurrentHealth
+    {
+        get { return currentHealth; }
+        set
+        {
+            if (value <= 0)
             {
                 Destroy(gameObject);
             }
 
             currentHealth = value;
-        } }
+        }
+    }
 
     [Min(1)]
     [SerializeField]

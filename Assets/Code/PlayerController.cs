@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed;
 
     public CharacterStats characterStats;
+    [SerializeField] ParticleSystem hitParticle = null; 
     
     void Awake()
     {
@@ -80,10 +81,15 @@ public class PlayerController : MonoBehaviour
         Collider2D[] enemies = Physics2D.OverlapCircleAll(point.position, radius);
         for (int i = 0; i < enemies.Length; i++)
         {
-            Debug.Log(enemies[i].name);
             enemies[i].GetComponent<CharacterStats>().CurrentHealth -= characterStats.Damage;
-            Debug.Log(enemies[i].GetComponent<CharacterStats>().CurrentHealth);
+            Hit();
         }
+    }
+
+    public void Hit()
+    {
+        hitParticle.Play();
+
     }
 
     private void OnDrawGizmos()
