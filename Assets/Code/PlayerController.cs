@@ -9,14 +9,20 @@ public class PlayerController : MonoBehaviour
     public Transform point;
     public float radius = 1;
     public IMovable movable;
+
     public Vector2 direction;
     public float dashCooldown;
     public float dashDuration;
     private bool canDash = true;
 
+
+    public CharacterStats characterStats;
+    
+
     void Awake()
     {
         movable = GetComponent<IMovable>();
+        characterStats = GetComponent<CharacterStats>();
     }
 
     private void OnEnable()
@@ -70,9 +76,10 @@ public class PlayerController : MonoBehaviour
         Collider2D[] enemies = Physics2D.OverlapCircleAll(point.position, radius);
         for (int i = 0; i < enemies.Length; i++)
         {
-            // TODO: attack our enemies witin the range
+            Debug.Log(enemies[i].name);
+            enemies[i].GetComponent<CharacterStats>().CurrentHealth -= characterStats.Damage;
+            Debug.Log(enemies[i].GetComponent<CharacterStats>().CurrentHealth);
         }
-        Debug.Log("I am attacking :)");
     }
 
     private void OnDrawGizmos()
