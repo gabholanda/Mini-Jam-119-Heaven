@@ -14,9 +14,11 @@ public class PlayerController : MonoBehaviour
     public float dashDuration;
     private bool canDash = true;
 
+
     void Awake()
     {
         movable = GetComponent<IMovable>();
+        characterStats = GetComponent<CharacterStats>();
     }
 
     private void OnEnable()
@@ -70,9 +72,10 @@ public class PlayerController : MonoBehaviour
         Collider2D[] enemies = Physics2D.OverlapCircleAll(point.position, radius);
         for (int i = 0; i < enemies.Length; i++)
         {
-            // TODO: attack our enemies witin the range
+            Debug.Log(enemies[i].name);
+            enemies[i].GetComponent<CharacterStats>().CurrentHealth -= characterStats.Damage;
+            Debug.Log(enemies[i].GetComponent<CharacterStats>().CurrentHealth);
         }
-        Debug.Log("I am attacking :)");
     }
 
     private void OnDrawGizmos()
