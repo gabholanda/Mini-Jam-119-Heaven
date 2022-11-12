@@ -34,6 +34,7 @@ public class Ability : MonoBehaviour
             stats.CurrentHealth -= (int)Mathf.Floor(
                 caster.GetComponent<CharacterStats>().Damage
                 * data.scalingCoeficient);
+            Debug.Log(stats.CurrentHealth);
         }
         else if (collision.CompareTag("Projectile"))
         {
