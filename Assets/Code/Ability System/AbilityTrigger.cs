@@ -25,6 +25,10 @@ public class AbilityTrigger : ScriptableObject
             {
                 FireBoundToCaster();
             }
+            else if (data.isInSetPosition)
+            {
+                FireInPosition(position);
+            }
             data.isCoolingDown = true;
             caster.GetComponent<CoroutineRunner>().StartCoroutine(StartCooldown());
         }
@@ -36,6 +40,7 @@ public class AbilityTrigger : ScriptableObject
         Ability ability = obj.GetComponent<Ability>();
         ability.direction = direction;
         SetGeneralAttributes(ability);
+        ability.AfterAwake();
     }
 
     private void FireBoundToCaster()
@@ -43,6 +48,15 @@ public class AbilityTrigger : ScriptableObject
         GameObject obj = Instantiate(prefab, caster.transform);
         Ability ability = obj.GetComponent<Ability>();
         SetGeneralAttributes(ability);
+        ability.AfterAwake();
+    }
+
+    private void FireInPosition(Vector2 position)
+    {
+        GameObject obj = Instantiate(prefab, position, Quaternion.identity);
+        Ability ability = obj.GetComponent<Ability>();
+        SetGeneralAttributes(ability);
+        ability.AfterAwake();
     }
 
     private void SetGeneralAttributes(Ability ability)

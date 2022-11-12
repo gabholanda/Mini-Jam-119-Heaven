@@ -19,6 +19,7 @@ public class AbilityData : ScriptableObject
     public float autoDestroyTimer = 1.0f;
     public bool isProjectile = false;
     public bool isBoundToCaster = false;
+    public bool isInSetPosition = false;
 
     [Header("Cooldown Data")]
     public bool isCoolingDown = false;
