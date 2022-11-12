@@ -3,11 +3,18 @@ using UnityEngine;
 public class CharacterStats : MonoBehaviour
 {
     private int currentHealth;
-    public int CurrentHealth { get { return currentHealth; } set { currentHealth = value; } }
+    public int CurrentHealth { get { return currentHealth; } set {
+            if(value == 0)
+            {
+                Destroy(gameObject);
+            }
+
+            currentHealth = value;
+        } }
 
     [SerializeField]
     private int maxHealth;
-    public int MaxHealth { get { return maxHealth; } set { maxHealth = value; } }
+    public int MaxHealth { get { return maxHealth; } set { maxHealth = value; CurrentHealth = value; } }
 
     [SerializeField]
     private int damage;
@@ -16,4 +23,9 @@ public class CharacterStats : MonoBehaviour
     [SerializeField]
     private float speed;
     public float Speed { get { return speed; } set { speed = value; } }
+
+    private void Awake()
+    {
+        CurrentHealth = MaxHealth;
+    }
 }
