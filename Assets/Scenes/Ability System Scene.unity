@@ -9952,7 +9952,7 @@ MonoBehaviour:
   characterStats: {fileID: 0}
   point: {fileID: 646420198}
   radius: 1
-  hitParticle: {fileID: 221902675}
+  hitParticle: {fileID: 0}
 --- !u!114 &859118626
 MonoBehaviour:
   m_ObjectHideFlags: 0

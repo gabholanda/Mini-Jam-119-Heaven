@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,28 +8,30 @@ public class PlayerController : MonoBehaviour
 {
     public InputReader reader;
     public Transform point;
-    public float radius = 1;
     public IMovable movable;
 
+    [Header("Movement")]
     public Vector2 direction;
     public float dashCooldown;
     public float dashDuration;
     private bool canDash = true;
     public float dashSpeed;
 
+    [Header("Stats & Skills")]
     public CharacterStats characterStats;
-    
+
+    [SerializeField]
+    ParticleSystem hitParticle = null;
 
     public AbilityTrigger meleeAttack;
 
+
+    public GameObject interactable;
 
     void Awake()
     {
         movable = GetComponent<IMovable>();
         characterStats = GetComponent<CharacterStats>();
-        // The real purpose of a Scriptable Object it is to act as Data Containers
-        // meaning they are a single source of truth which replaces the Singleton Pattern
-        // You guys will learn this when studying about Design Patterns
         meleeAttack.Initialize(gameObject);
     }
 
@@ -38,6 +41,8 @@ public class PlayerController : MonoBehaviour
         reader.Dash.performed += OnDash;
         reader.Move.performed += OnMove;
         reader.Move.canceled += OnStopMove;
+        reader.Interact.performed += OnInteract;
+        reader.Interact.Enable();
         reader.Move.Enable();
         reader.Attack.Enable();
         reader.Dash.Enable();
@@ -50,9 +55,19 @@ public class PlayerController : MonoBehaviour
         reader.Attack.performed -= OnAttack;
         reader.Move.canceled -= OnStopMove;
         reader.Dash.performed -= OnDash;
+        reader.Interact.performed -= OnInteract;
+        reader.Interact.Disable();
         reader.Move.Disable();
         reader.Attack.Disable();
         reader.Dash.Disable();
+    }
+
+    private void OnInteract(InputAction.CallbackContext obj)
+    {
+        if (interactable != null)
+        {
+            interactable.GetComponent<IInteractable>()?.Interact();
+        }
     }
 
     private void OnDash(InputAction.CallbackContext context)
@@ -85,9 +100,9 @@ public class PlayerController : MonoBehaviour
         meleeAttack.Fire(point.position, MouseUtils.GetMousePositionInWorld());
     }
 
-    private void OnDrawGizmos()
+    public void Hit()
     {
-        Gizmos.DrawSphere(point.position, radius);
+        hitParticle.Play();
     }
 
     IEnumerator CoolDown()
