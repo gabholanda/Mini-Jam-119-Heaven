@@ -27,10 +27,8 @@ public class EnemyController : MonoBehaviour
 
         if (distance >= 1)
         {
-
         transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, characterStats.Speed * Time.deltaTime);
         //OnAttack();
- 
         }
     }
     private void OnAttack()
@@ -41,8 +39,8 @@ public class EnemyController : MonoBehaviour
             Player[i].GetComponent<CharacterStats>().CurrentHealth -= characterStats.Damage;
         }
     }
-    private void OnDrawGizmos()
+    public void Hit()
     {
-        Gizmos.DrawSphere(point.position, radius);
+        hitParticle.Play();
     }
 }

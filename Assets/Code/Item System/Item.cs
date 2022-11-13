@@ -14,7 +14,6 @@ public class Item : PowerUp, IInteractable
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = data.sprite;
         textMesh = GetComponentInChildren<TMPro.TextMeshPro>();
-        textMesh.text = data.description;
     }
 
     public void Interact()
@@ -30,6 +29,7 @@ public class Item : PowerUp, IInteractable
             PlayerController player = collision.GetComponent<PlayerController>();
             player.interactable = gameObject;
             playerObj = collision.gameObject;
+            textMesh.text = data.description;
             textMesh.enabled = true;
         }
     }
