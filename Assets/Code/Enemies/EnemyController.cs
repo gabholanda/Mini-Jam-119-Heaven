@@ -51,4 +51,12 @@ public class EnemyController : MonoBehaviour
     {
         hitParticle.Play();
     }
+
+    protected void OnDestroy()
+    {
+        GetComponent<LootBag>().InstantiateLoot(transform.position);
+        Debug.Log("123");
+
+    }
 }
+

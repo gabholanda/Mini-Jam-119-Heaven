@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+    public int currency;
+
     public InputReader reader;
     public Transform point;
     public IMovable movable;
