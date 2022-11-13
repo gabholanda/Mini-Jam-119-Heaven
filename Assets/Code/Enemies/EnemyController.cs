@@ -47,11 +47,9 @@ public class EnemyController : MonoBehaviour
         realTrigger.Fire(player.transform.position, new Vector2(0, 0));
     }
 
-    protected void OnDestroy()
+    public virtual void OnDestroy()
     {
         GetComponent<LootBag>().InstantiateLoot(transform.position);
-        Debug.Log("123");
-
     }
 
 }
