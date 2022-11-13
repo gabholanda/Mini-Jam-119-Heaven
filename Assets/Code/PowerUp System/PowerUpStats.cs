@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New PowerUp Stats", menuName = "Scriptable Objects/PowerUp System/PowerUp Stats")]
+[CreateAssetMenu(fileName = "New PowerUp Stat", menuName = "Scriptable Objects/PowerUp System/PowerUp Stat")]
 public class PowerUpStats : ScriptableObject
 {
     public float damage;

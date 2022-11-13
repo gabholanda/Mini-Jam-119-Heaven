@@ -39,6 +39,39 @@ public class PowerUp : MonoBehaviour
         }
         OnEquipEvent?.Invoke();
     }
+    public void OnEquip(GameObject target)
+    {
+        CharacterStats playerStats = target.GetComponent<CharacterStats>();
+
+        if (powerUpStats.isDamageFlat)
+        {
+            playerStats.Damage += (int)powerUpStats.damage;
+        }
+        else
+        {
+            float newDamage = playerStats.Damage * (powerUpStats.damage + 1.0f);
+            playerStats.Damage *= (int)newDamage;
+        }
+        if (powerUpStats.isHealthFlat)
+        {
+            playerStats.MaxHealth += (int)powerUpStats.health;
+        }
+        else
+        {
+            float newHealth = playerStats.Damage * (powerUpStats.damage + 1.0f);
+            playerStats.MaxHealth *= (int)newHealth;
+        }
+        if (powerUpStats.isSpeedFlat)
+        {
+            playerStats.Speed += (int)powerUpStats.speed;
+        }
+        else
+        {
+            float newSpeed = playerStats.Damage * (powerUpStats.damage + 1.0f);
+            playerStats.Speed *= newSpeed;
+        }
+        OnEquipEvent?.Invoke();
+    }
 
     protected void OnDestroy()
     {

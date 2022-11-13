@@ -10,4 +10,5 @@ public class InputReader : ScriptableObject
     public InputAction Move;
     public InputAction Attack;
     public InputAction Dash;
+    public InputAction Interact;
 }

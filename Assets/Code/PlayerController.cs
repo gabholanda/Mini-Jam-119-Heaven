@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,6 +25,8 @@ public class PlayerController : MonoBehaviour
     public AbilityTrigger meleeAttack;
 
 
+    public GameObject interactable;
+
     void Awake()
     {
         movable = GetComponent<IMovable>();
@@ -37,6 +40,8 @@ public class PlayerController : MonoBehaviour
         reader.Dash.performed += OnDash;
         reader.Move.performed += OnMove;
         reader.Move.canceled += OnStopMove;
+        reader.Interact.performed += OnInteract;
+        reader.Interact.Enable();
         reader.Move.Enable();
         reader.Attack.Enable();
         reader.Dash.Enable();
@@ -49,9 +54,19 @@ public class PlayerController : MonoBehaviour
         reader.Attack.performed -= OnAttack;
         reader.Move.canceled -= OnStopMove;
         reader.Dash.performed -= OnDash;
+        reader.Interact.performed -= OnInteract;
+        reader.Interact.Disable();
         reader.Move.Disable();
         reader.Attack.Disable();
         reader.Dash.Disable();
+    }
+
+    private void OnInteract(InputAction.CallbackContext obj)
+    {
+        if (interactable != null)
+        {
+            interactable.GetComponent<IInteractable>()?.Interact();
+        }
     }
 
     private void OnDash(InputAction.CallbackContext context)
