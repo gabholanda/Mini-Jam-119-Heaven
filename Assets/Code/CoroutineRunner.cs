@@ -6,6 +6,8 @@ public class CoroutineRunner : MonoBehaviour
 {
     private void OnDestroy()
     {
+        
         StopAllCoroutines();
+
     }
 }

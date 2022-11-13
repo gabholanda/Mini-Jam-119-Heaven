@@ -46,4 +46,11 @@ public class EnemyController : MonoBehaviour
     {
         realTrigger.Fire(player.transform.position, new Vector2(0, 0));
     }
+
+    public virtual void OnDestroy()
+    {
+        GetComponent<LootBag>().InstantiateLoot(transform.position);
+    }
+
 }
+

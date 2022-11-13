@@ -11,15 +11,22 @@ public class Item : PowerUp, IInteractable
 
     private void Awake()
     {
+
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = data.sprite;
         textMesh = GetComponentInChildren<TMPro.TextMeshPro>();
+
     }
 
     public void Interact()
     {
-        OnEquip(playerObj);
-        Destroy(gameObject);
+        PlayerController controller = playerObj.GetComponent<PlayerController>();
+        if (controller.currency > data.price)
+        {
+            controller.currency -= data.price;
+            OnEquip(playerObj);
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

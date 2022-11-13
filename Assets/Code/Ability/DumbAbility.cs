@@ -15,7 +15,8 @@ public class DumbAbility : Ability
     {
         if (hitableTags.Contains(collision.tag))
         {
-            dealer.DealDamage(caster, collision.gameObject, this);
+            if (caster)
+                dealer.DealDamage(caster.GetComponent<CharacterStats>().Damage, collision.gameObject, this);
         }
         else if (collision.CompareTag("Projectile"))
         {

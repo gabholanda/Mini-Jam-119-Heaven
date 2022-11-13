@@ -198,8 +198,9 @@ public class FirstBossController : EnemyController
         StartCoroutine(StartShottingCycle());
     }
 
-    private void OnDestroy()
+    public override void OnDestroy()
     {
         StopAllCoroutines();
+        base.OnDestroy();
     }
 }
