@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1673348169901697810, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1673348169901697810, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
       propertyPath: m_LocalScale.x
@@ -99,6 +99,32 @@ PrefabInstance:
     - target: {fileID: 1673348169901697815, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673252060442476209, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
+      propertyPath: m_text
+      value: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean gravida
+        convallis justo, ut lacinia magna eleifend quis. Proin placerat vitae lorem
+        non fermentum. Integer a maximus enim, non vehicula mi. Sed mattis ante at
+        justo tincidunt eleifend. Nullam dolor est, ultrices id luctus vel, sollicitudin
+        ultricies ligula. Sed eu purus convallis, pellentesque enim at, cursus purus.
+        Phasellus ut luctus arcu. Proin eu ipsum eget nisi eleifend suscipit in at
+        ex
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673252060442476209, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
+      propertyPath: m_margin.y
+      value: 0.03905773
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673252060442476209, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673252060442476209, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8607816509093386382, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
