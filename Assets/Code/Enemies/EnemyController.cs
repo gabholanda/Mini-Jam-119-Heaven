@@ -27,10 +27,8 @@ public class EnemyController : MonoBehaviour
 
         if (distance >= 1)
         {
-
-            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, characterStats.Speed * Time.deltaTime);
-            OnAttack();
-
+        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, characterStats.Speed * Time.deltaTime);
+        //OnAttack();
         }
     }
     private void OnAttack()
@@ -39,8 +37,6 @@ public class EnemyController : MonoBehaviour
         for (int i = 0; i < Player.Length; i++)
         {
             Player[i].GetComponent<CharacterStats>().CurrentHealth -= characterStats.Damage;
-            Debug.Log(player.GetComponent<CharacterStats>().CurrentHealth);
-            Hit();
         }
     }
     public void Hit()
