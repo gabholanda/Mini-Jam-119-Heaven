@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Small Health Potion
   m_EditorClassIdentifier: 
   price: 1
-  description: 
+  description: 'Small Health Potion
+
+    Minor Health Increase'
   itemPrefab: {fileID: 4680778926506224341, guid: 8baa4b0e923667d45aa29ce8839429fc, type: 3}
-  sprite: {fileID: 21300000, guid: 205886d5849b81c46a54312599d357b6, type: 3}
+  sprite: {fileID: 21300000, guid: 40f5360ec04e6834f885ac6312d9c07c, type: 3}

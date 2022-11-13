@@ -13,7 +13,7 @@ public class RangedEnemyController : EnemyController
 
     public void Update()
     {
-
-        FireBeam();
+        if (player)
+            FireBeam();
     }
 }
