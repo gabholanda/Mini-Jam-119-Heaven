@@ -8,6 +8,14 @@ public class AbilityTrigger : ScriptableObject
     public GameObject prefab;
     public AbilityData data;
 
+
+    public void DeepCopy(AbilityTrigger other)
+    {
+        prefab = other.prefab;
+        data = CreateInstance<AbilityData>();
+        data.DeepCopy(other.data);
+    }
+
     public void Initialize(GameObject _caster)
     {
         caster = _caster;
@@ -40,7 +48,7 @@ public class AbilityTrigger : ScriptableObject
         GameObject obj = Instantiate(prefab, position, Quaternion.identity);
         Ability ability = obj.GetComponent<Ability>();
         ability.direction = direction;
-       
+
         SetGeneralAttributes(ability);
         ability.AfterAwake();
 
