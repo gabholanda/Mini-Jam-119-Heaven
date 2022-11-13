@@ -14,9 +14,11 @@ GameObject:
   - component: {fileID: 8716836384263951945}
   - component: {fileID: 8716836384263951944}
   - component: {fileID: 8716836384263951947}
+  - component: {fileID: 1003351867}
+  - component: {fileID: 1003351868}
   m_Layer: 0
   m_Name: angel mob
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,3 +165,33 @@ MonoBehaviour:
   maxHealth: 30
   damage: 5
   speed: 1
+--- !u!114 &1003351867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8716836384263951946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c25fe876ab046b4cb14a1751bef39d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  characterStats: {fileID: 0}
+  point: {fileID: 0}
+  radius: 1
+  hitParticle: {fileID: 0}
+  trigger: {fileID: 11400000, guid: f87969802609e834f867957b95cd5a6a, type: 2}
+--- !u!114 &1003351868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8716836384263951946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872dfb55ad6170149942e24836b6f045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

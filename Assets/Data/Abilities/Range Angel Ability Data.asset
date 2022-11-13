@@ -17,9 +17,9 @@ MonoBehaviour:
   onHitParticle: {fileID: 0}
   onCastParticle: {fileID: 0}
   scalingCoeficient: 1
-  autoDestroyTimer: 100
+  autoDestroyTimer: 3
   isProjectile: 1
   isBoundToCaster: 0
   isInSetPosition: 0
-  isCoolingDown: 1
-  cooldownDuration: 0.5
+  isCoolingDown: 0
+  cooldownDuration: 3
