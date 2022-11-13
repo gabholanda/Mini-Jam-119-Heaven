@@ -20,9 +20,6 @@ public class PlayerController : MonoBehaviour
     [Header("Stats & Skills")]
     public CharacterStats characterStats;
 
-    [SerializeField]
-    ParticleSystem hitParticle = null;
-
     public AbilityTrigger meleeAttack;
     private AbilityTrigger realMeleeAttack;
 
@@ -31,6 +28,8 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
+        DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded += OnSceneLoaded;
         movable = GetComponent<IMovable>();
         characterStats = GetComponent<CharacterStats>();
         realMeleeAttack = ScriptableObject.CreateInstance<AbilityTrigger>();
@@ -103,9 +102,9 @@ public class PlayerController : MonoBehaviour
         realMeleeAttack.Fire(point.position, MouseUtils.GetMousePositionInWorld());
     }
 
-    public void Hit()
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        hitParticle.Play();
+        transform.position = new Vector3();
     }
 
     IEnumerator CoolDown()
