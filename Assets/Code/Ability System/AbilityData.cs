@@ -22,7 +22,6 @@ public class AbilityData : ScriptableObject
     public bool isInSetPosition = false;
 
     [Header("Cooldown Data")]
-    [HideInInspector]
     public bool isCoolingDown = false;
     public float cooldownDuration = 0f;
 

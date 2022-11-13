@@ -47,7 +47,7 @@ public class AbilityTrigger : ScriptableObject
     {
         GameObject obj = Instantiate(prefab, position, Quaternion.identity);
         Ability ability = obj.GetComponent<Ability>();
-        ability.direction = direction;
+        ability.direction = (direction - position).normalized;
 
         SetGeneralAttributes(ability);
         ability.AfterAwake();
