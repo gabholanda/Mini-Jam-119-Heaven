@@ -17,4 +17,4 @@ MonoBehaviour:
 
     Minor Health Increase'
   itemPrefab: {fileID: 4680778926506224341, guid: 8baa4b0e923667d45aa29ce8839429fc, type: 3}
-  sprite: {fileID: 21300000, guid: f065899a1de5b4840bc5cd095c316908, type: 3}
+  sprite: {fileID: 21300000, guid: 40f5360ec04e6834f885ac6312d9c07c, type: 3}

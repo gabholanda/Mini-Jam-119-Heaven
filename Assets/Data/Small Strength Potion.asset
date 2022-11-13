@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Small Strength Potion
   m_EditorClassIdentifier: 
   price: 1
-  description: 'Strength Potion
+  description: 'Small Strength Potion
 
     Minor Damage Increase'
   itemPrefab: {fileID: 5724429771971052651, guid: ae4fdbc2445080d4a8c1e4cd09794283, type: 3}
-  sprite: {fileID: 21300000, guid: a8a0e517ca438664d9bd1e3b18fbd743, type: 3}
+  sprite: {fileID: 21300000, guid: 7027b75649b9ab4409d3cc6ec7007f21, type: 3}

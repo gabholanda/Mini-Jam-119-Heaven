@@ -15,6 +15,6 @@ MonoBehaviour:
   price: 1
   description: 'Health Potion
 
-    Health Increase'
+    Regular Health Increase'
   itemPrefab: {fileID: 4680778926506224341, guid: 658b588daf5b3ba47a998a356a3ec9a9, type: 3}
-  sprite: {fileID: 21300000, guid: 7e1e03b548af74949af88e1d6ac083d2, type: 3}
+  sprite: {fileID: 21300000, guid: d594e50d013ad3043a93b96f4cc656e8, type: 3}
