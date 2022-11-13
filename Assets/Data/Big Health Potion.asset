@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Big Health Potion
   m_EditorClassIdentifier: 
   price: 1
-  description: 
+  description: 'Big Health Potion
+
+    Major Health Increase'
   itemPrefab: {fileID: 4680778926506224341, guid: 8aff21e9c77e6134b8496e8d06a0e276, type: 3}
-  sprite: {fileID: 21300000, guid: 205886d5849b81c46a54312599d357b6, type: 3}
+  sprite: {fileID: 21300000, guid: b5abe182daa946c48b8d699ec20cfe29, type: 3}
