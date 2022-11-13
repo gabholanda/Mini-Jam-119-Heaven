@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        transform.position = new Vector3();
+        transform.position = new Vector3(0, -1);
     }
 
     IEnumerator CoolDown()
@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnDestroy()
     {
-        SceneManager.LoadScene("Floor1-Room1");
+        SceneManager.LoadScene("Hub");
     }
 }
 
