@@ -11,8 +11,6 @@ public class EnemyController : MonoBehaviour
     private float distance;
     public CharacterStats characterStats;
     [SerializeField]
-    ParticleSystem hitParticle = null;
-    [SerializeField]
     private AbilityTrigger trigger;
     protected AbilityTrigger realTrigger;
 
@@ -47,9 +45,5 @@ public class EnemyController : MonoBehaviour
     private void OnAttack()
     {
         realTrigger.Fire(player.transform.position, new Vector2(0, 0));
-    }
-    public void Hit()
-    {
-        hitParticle.Play();
     }
 }
