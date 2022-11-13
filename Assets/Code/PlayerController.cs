@@ -18,8 +18,6 @@ public class PlayerController : MonoBehaviour
 
     public CharacterStats characterStats;
     
-    [SerializeField]
-    ParticleSystem hitParticle = null;
 
     public AbilityTrigger meleeAttack;
 
@@ -81,17 +79,10 @@ public class PlayerController : MonoBehaviour
     {
         direction = new Vector2(0, 0);
         movable.SetVector(direction * characterStats.Speed);
-
     }
     private void OnAttack(InputAction.CallbackContext context)
     {
         meleeAttack.Fire(point.position, MouseUtils.GetMousePositionInWorld());
-    }
-
-    public void Hit()
-    {
-        hitParticle.Play();
-
     }
 
     private void OnDrawGizmos()
