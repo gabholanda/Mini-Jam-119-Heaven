@@ -22,6 +22,22 @@ public class AbilityData : ScriptableObject
     public bool isInSetPosition = false;
 
     [Header("Cooldown Data")]
+    [HideInInspector]
     public bool isCoolingDown = false;
     public float cooldownDuration = 0f;
+
+    public void DeepCopy(AbilityData otherData)
+    {
+        color = otherData.color;
+        soundFX = otherData.soundFX;
+        onHitParticle = otherData.onHitParticle;
+        onCastParticle = otherData.onCastParticle;
+        scalingCoeficient = otherData.scalingCoeficient;
+        autoDestroyTimer = otherData.autoDestroyTimer;
+        isProjectile = otherData.isProjectile;
+        isBoundToCaster = otherData.isBoundToCaster;
+        isInSetPosition = otherData.isInSetPosition;
+        isCoolingDown = otherData.isCoolingDown;
+        cooldownDuration = otherData.cooldownDuration;
+    }
 }
