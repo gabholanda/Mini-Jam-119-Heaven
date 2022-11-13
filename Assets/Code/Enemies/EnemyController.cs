@@ -6,18 +6,17 @@ using UnityEngine.InputSystem;
 
 public class EnemyController : MonoBehaviour
 {
-    public GameObject player;
+    protected GameObject player;
 
     private float distance;
     public CharacterStats characterStats;
     [SerializeField]
-    ParticleSystem hitParticle = null;
-    [SerializeField]
     private AbilityTrigger trigger;
     protected AbilityTrigger realTrigger;
 
-    protected void Awake()
+    protected virtual void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         characterStats = GetComponent<CharacterStats>();
         realTrigger = ScriptableObject.CreateInstance<AbilityTrigger>();
         realTrigger.DeepCopy(trigger);
@@ -47,10 +46,6 @@ public class EnemyController : MonoBehaviour
     {
         realTrigger.Fire(player.transform.position, new Vector2(0, 0));
     }
-    public void Hit()
-    {
-        hitParticle.Play();
-    }
 
     protected void OnDestroy()
     {
@@ -58,5 +53,6 @@ public class EnemyController : MonoBehaviour
         Debug.Log("123");
 
     }
+
 }
 

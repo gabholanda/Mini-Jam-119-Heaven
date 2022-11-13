@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
+    public delegate void OnDeathHandler();
+    public event OnDeathHandler OnDeathEvent;
+
     private int currentHealth;
     public int CurrentHealth
     {
@@ -10,6 +13,7 @@ public class CharacterStats : MonoBehaviour
         {
             if (value <= 0)
             {
+                OnDeathEvent?.Invoke();
                 Destroy(gameObject);
             }
 
