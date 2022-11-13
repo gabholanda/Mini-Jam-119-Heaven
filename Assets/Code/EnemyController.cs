@@ -29,7 +29,7 @@ public class EnemyController : MonoBehaviour
         {
 
         transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, characterStats.Speed * Time.deltaTime);
-        OnAttack();
+        //OnAttack();
  
         }
     }
@@ -39,13 +39,7 @@ public class EnemyController : MonoBehaviour
         for (int i = 0; i < Player.Length; i++)
         {
             Player[i].GetComponent<CharacterStats>().CurrentHealth -= characterStats.Damage;
-            Debug.Log(player.GetComponent<CharacterStats>().CurrentHealth);
-            Hit();
         }
-    }
-    public void Hit()
-    {
-        hitParticle.Play();
     }
     private void OnDrawGizmos()
     {
