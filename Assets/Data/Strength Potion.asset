@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Strength Potion
   m_EditorClassIdentifier: 
   price: 1
-  description: This makes  you very strong.
+  description: 'Strength  Potion
+
+    Damage Increase'
   itemPrefab: {fileID: 5724429771971052651, guid: 9d622a86270661c48945cf6142c0315c, type: 3}
-  sprite: {fileID: 21300000, guid: ac77fbfb662537548862e68c1c31ef06, type: 3}
+  sprite: {fileID: 21300000, guid: ca10b003f03b5264591179ac8c3c5c06, type: 3}
