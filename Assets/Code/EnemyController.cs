@@ -15,7 +15,6 @@ public class EnemyController : MonoBehaviour
     [SerializeField] ParticleSystem hitParticle = null;
     void Awake()
     {
-      
         characterStats = GetComponent<CharacterStats>();
     }
     void Update()

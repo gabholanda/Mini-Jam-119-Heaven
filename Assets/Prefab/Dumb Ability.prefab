@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 800332317289854038}
   - component: {fileID: 800332317289854039}
-  - component: {fileID: 800332317289854032}
   - component: {fileID: 800332317289854037}
   - component: {fileID: 800332317289854036}
+  - component: {fileID: 800332317289854032}
   - component: {fileID: 6336091948380532971}
+  - component: {fileID: -3737108613481190905}
   m_Layer: 0
   m_Name: Dumb Ability
   m_TagString: Projectile
@@ -88,25 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &800332317289854032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 800332317289854033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0387652fbfa8d034688e264691ec8482, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitableTags:
-  - Enemy
-  caster: {fileID: 0}
-  direction: {x: 0, y: 0}
-  speed: 0
-  angle: 0
-  data: {fileID: 0}
 --- !u!50 &800332317289854037
 Rigidbody2D:
   serializedVersion: 4
@@ -154,6 +136,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &800332317289854032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800332317289854033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0387652fbfa8d034688e264691ec8482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitableTags:
+  - Enemy
+  caster: {fileID: 0}
+  direction: {x: 0, y: 0}
+  angle: 0
+  data: {fileID: 0}
+  dealer: {fileID: -3737108613481190905}
 --- !u!114 &6336091948380532971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,3 +170,15 @@ MonoBehaviour:
   maxHealth: 10
   damage: 1
   speed: 3
+--- !u!114 &-3737108613481190905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800332317289854033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d3aa5ea255ed1549aed9f23d7573a2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

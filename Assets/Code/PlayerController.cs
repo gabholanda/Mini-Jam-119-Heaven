@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Stats & Skills")]
     public CharacterStats characterStats;
+
     [SerializeField]
     ParticleSystem hitParticle = null;
 
@@ -93,7 +94,6 @@ public class PlayerController : MonoBehaviour
     {
         direction = new Vector2(0, 0);
         movable.SetVector(direction * characterStats.Speed);
-
     }
     private void OnAttack(InputAction.CallbackContext context)
     {
@@ -103,7 +103,6 @@ public class PlayerController : MonoBehaviour
     public void Hit()
     {
         hitParticle.Play();
-
     }
 
     IEnumerator CoolDown()
