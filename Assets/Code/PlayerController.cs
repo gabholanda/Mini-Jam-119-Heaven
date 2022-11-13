@@ -25,7 +25,8 @@ public class PlayerController : MonoBehaviour
     public AbilityTrigger meleeAttack;
     private AbilityTrigger realMeleeAttack;
 
-
+    public GameObject axe;
+    private Animator axeAnim;
     public GameObject interactable;
 
     void Awake()
@@ -37,6 +38,8 @@ public class PlayerController : MonoBehaviour
         realMeleeAttack = ScriptableObject.CreateInstance<AbilityTrigger>();
         realMeleeAttack.DeepCopy(meleeAttack);
         realMeleeAttack.Initialize(gameObject);
+
+        axeAnim = axe.GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -92,6 +95,22 @@ public class PlayerController : MonoBehaviour
         if (Mathf.Abs(direction.x) == 1f || Mathf.Abs(direction.y) == 1f)
         {
             point.localPosition = direction;
+            if (point.localPosition.x == 1f)
+            {
+                axe.transform.localRotation = Quaternion.Euler(0, 0, 90);
+            }
+            else if (point.localPosition.x == -1f)
+            {
+                axe.transform.localRotation = Quaternion.Euler(0, 0, -90);
+            }
+            if (point.localPosition.y == 1f)
+            {
+                axe.transform.localRotation = Quaternion.Euler(0, 0, 180);
+            }
+            if (point.localPosition.y == -1f)
+            {
+                axe.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            }
         }
     }
     private void OnStopMove(InputAction.CallbackContext context)
@@ -101,7 +120,11 @@ public class PlayerController : MonoBehaviour
     }
     private void OnAttack(InputAction.CallbackContext context)
     {
-        realMeleeAttack.Fire(point.position, MouseUtils.GetMousePositionInWorld());
+        if (!realMeleeAttack.data.isCoolingDown)
+        {
+            axeAnim.Play("Swing");
+            realMeleeAttack.Fire(point.position *2, MouseUtils.GetMousePositionInWorld());
+        }
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
