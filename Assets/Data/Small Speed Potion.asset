@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Small Speed Potion
   m_EditorClassIdentifier: 
   price: 1
-  description: 'Small Speed Potion
+  description: 'Small SpeedPotion
 
     Minor Speed Increase'
   itemPrefab: {fileID: 4293869098805341610, guid: 5e91a74a94e757946b3baae7fcadb665, type: 3}
-  sprite: {fileID: 21300000, guid: 53057302d25f8c54bb293c62adbcda8d, type: 3}
+  sprite: {fileID: 21300000, guid: 70b962fe96c1cf04183d93db059652f2, type: 3}

@@ -13,13 +13,7 @@ MonoBehaviour:
   m_Name: Hoyo
   m_EditorClassIdentifier: 
   price: 1
-  description: 'Holy Yo-yo (Aka. Hoyo)
-
-    Damgae Increase
-
-    Speed Increase
-
-    Health
-    Increase'
+  description: "Holy Yo-yo (Aka. Hoyo)\nDamage Increase \nHealth Increase \nSpeed
+    Increase"
   itemPrefab: {fileID: 1673348169901697811, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
-  sprite: {fileID: 21300000, guid: b6a6922d29f78494c96be809599edd3c, type: 3}
+  sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
