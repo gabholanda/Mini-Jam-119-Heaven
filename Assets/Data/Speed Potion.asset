@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71030f02d9572d044938ece36fd585de, type: 3}
-  m_Name: Hoyo
+  m_Name: Speed Potion
   m_EditorClassIdentifier: 
   price: 1
-  description: Holy Yo-yo (Aka. Hoyo)
-  itemPrefab: {fileID: 1673348169901697811, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
-  sprite: {fileID: 21300000, guid: 4810a70e44b75df44a687519876d7cde, type: 3}
+  description: 
+  itemPrefab: {fileID: 4293869098805341610, guid: 347c42508fbb07c41b2a8d9e874ae24e, type: 3}
+  sprite: {fileID: 21300000, guid: 533a508a260c1fc4f9a09e25b2a71d10, type: 3}

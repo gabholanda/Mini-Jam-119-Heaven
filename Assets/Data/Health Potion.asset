@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71030f02d9572d044938ece36fd585de, type: 3}
-  m_Name: Hoyo
+  m_Name: Health Potion
   m_EditorClassIdentifier: 
   price: 1
-  description: Holy Yo-yo (Aka. Hoyo)
-  itemPrefab: {fileID: 1673348169901697811, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
-  sprite: {fileID: 21300000, guid: 4810a70e44b75df44a687519876d7cde, type: 3}
+  description: 
+  itemPrefab: {fileID: 4680778926506224341, guid: 658b588daf5b3ba47a998a356a3ec9a9, type: 3}
+  sprite: {fileID: 21300000, guid: 205886d5849b81c46a54312599d357b6, type: 3}
