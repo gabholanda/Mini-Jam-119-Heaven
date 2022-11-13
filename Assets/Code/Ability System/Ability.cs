@@ -7,7 +7,6 @@ public class Ability : MonoBehaviour
     public List<string> hitableTags;
     public GameObject caster;
     public Vector2 direction;
-    public float angle;
     public AbilityData data;
     protected Rigidbody2D rb;
     protected CharacterStats abilityStats;
