@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62cb0227104edc2458013e7b95b5f03a, type: 3}
   m_Name: Angelic Feathers
   m_EditorClassIdentifier: 
-  lootSprite: {fileID: 21300000, guid: 2dd5ff3a2fbda7446bb8f1480bbf63ec, type: 3}
+  lootSprite: {fileID: 21300000, guid: 0c0740cd2c116a24fa0c13487a1c0915, type: 3}
   lootName: Feathers
   dropChance: 100

@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: damage
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 7417814327434053244, guid: 0b1d1053397df344881e0d32f3a6e788, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d46583755d54d9348b0cd0c74788e2fe, type: 3}
     - target: {fileID: 7417814327434053245, guid: 0b1d1053397df344881e0d32f3a6e788, type: 3}
       propertyPath: m_RootOrder
       value: 2
