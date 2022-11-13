@@ -11,9 +11,11 @@ public class Item : PowerUp, IInteractable
 
     private void Awake()
     {
+
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = data.sprite;
         textMesh = GetComponentInChildren<TMPro.TextMeshPro>();
+ 
     }
 
     public void Interact()
