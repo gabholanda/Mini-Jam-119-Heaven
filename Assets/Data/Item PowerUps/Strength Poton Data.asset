@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 344c1e6d9b62fbd40896e386cca67a2f, type: 3}
   m_Name: Strength Poton Data
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 4
   speed: 0
   health: 0
   isDamageFlat: 1
