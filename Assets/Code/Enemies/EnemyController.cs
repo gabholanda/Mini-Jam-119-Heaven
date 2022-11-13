@@ -10,37 +10,42 @@ public class EnemyController : MonoBehaviour
 
     private float distance;
     public CharacterStats characterStats;
-    public Transform point;
-    public float radius = 1;
-    [SerializeField] ParticleSystem hitParticle = null;
-    public AbilityTrigger trigger;
-   
+    [SerializeField]
+    ParticleSystem hitParticle = null;
+    [SerializeField]
+    private AbilityTrigger trigger;
+    protected AbilityTrigger realTrigger;
+
     protected void Awake()
     {
         characterStats = GetComponent<CharacterStats>();
-        trigger.Initialize(gameObject);
+        realTrigger = ScriptableObject.CreateInstance<AbilityTrigger>();
+        realTrigger.DeepCopy(trigger);
+        realTrigger.Initialize(gameObject);
     }
+
     void Update()
     {
-        distance = Vector2.Distance(transform.position, player.transform.position);
-        Vector2 direction = player.transform.position - transform.position;
-        direction.Normalize();
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-
-        if (distance >= 1)
+        if (player)
         {
-        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, characterStats.Speed * Time.deltaTime);
-        //OnAttack();
+            distance = Vector2.Distance(transform.position, player.transform.position);
+            Vector2 direction = player.transform.position - transform.position;
+            direction.Normalize();
+
+            if (distance >= 1)
+            {
+                transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, characterStats.Speed * Time.deltaTime);
+            }
+
+            if (distance <= 1)
+            {
+                OnAttack();
+            }
         }
     }
     private void OnAttack()
     {
-        Collider2D[] Player = Physics2D.OverlapCircleAll(point.position, radius);
-        for (int i = 0; i < Player.Length; i++)
-        {
-            Player[i].GetComponent<CharacterStats>().CurrentHealth -= characterStats.Damage;
-        }
+        realTrigger.Fire(player.transform.position, new Vector2(0, 0));
     }
     public void Hit()
     {
