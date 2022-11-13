@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class EnemyController : MonoBehaviour
 {
-    public GameObject player;
+    protected GameObject player;
 
     private float distance;
     public CharacterStats characterStats;
@@ -16,8 +16,9 @@ public class EnemyController : MonoBehaviour
     private AbilityTrigger trigger;
     protected AbilityTrigger realTrigger;
 
-    protected void Awake()
+    protected virtual void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         characterStats = GetComponent<CharacterStats>();
         realTrigger = ScriptableObject.CreateInstance<AbilityTrigger>();
         realTrigger.DeepCopy(trigger);

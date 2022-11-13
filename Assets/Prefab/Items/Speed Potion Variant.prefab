@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1673348169901697811, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
       propertyPath: m_Name
-      value: Speed Potion Variant
+      value: Speed Potion
       objectReference: {fileID: 0}
     - target: {fileID: 1673348169901697811, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
       propertyPath: m_TagString
@@ -70,15 +70,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 9069fe9f1a9264540a65ee268f46d105, type: 2}
     - target: {fileID: 1673348169901697813, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0.18039213
       objectReference: {fileID: 0}
     - target: {fileID: 1673348169901697813, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
       propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1673348169901697813, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
-      propertyPath: m_Color.r
-      value: 1
+      value: 0.6978111
       objectReference: {fileID: 0}
     - target: {fileID: 1673348169901697814, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
       propertyPath: m_BodyType
