@@ -312,6 +312,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5a1d0ceaf63ba2a42ad34a55e1b6c316, type: 2}
   - {fileID: 11400000, guid: f87276edd0197a042b8ec46e16a8bd06, type: 2}
   - {fileID: 11400000, guid: e94266df2ffece44884d1df86cf2ad53, type: 2}
+  - {fileID: 11400000, guid: 01d1973fb744afa4f9660538d997ea2f, type: 2}
+  - {fileID: 11400000, guid: a9209cb9221e87242bff5520f201f6fe, type: 2}
+  - {fileID: 11400000, guid: 8ee380778d8a63649b32ae1fdd5b71ff, type: 2}
+  - {fileID: 11400000, guid: e1d8139209daff544b6e592b4c5d37d9, type: 2}
+  - {fileID: 11400000, guid: b40ac4cd6b009c54796e52336d7c6523, type: 2}
+  - {fileID: 11400000, guid: 6cee7813e38d5074bbad8d1537957a80, type: 2}
+  - {fileID: 11400000, guid: 3376db071d7b89041af9d6a58d1adf95, type: 2}
+  - {fileID: 11400000, guid: b9d82f435ffa47c4fb83f4dc653df404, type: 2}
+  - {fileID: 11400000, guid: e6c6313b995acfe4aaa4461e86a8f312, type: 2}
   Item1Pos: {fileID: 828751025}
   Item2Pos: {fileID: 610731587}
   Item3Pos: {fileID: 578555523}
@@ -573,7 +582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   damage: 1
-  speed: 5
+  speed: 2
 --- !u!114 &1705671298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,7 +632,7 @@ MonoBehaviour:
   point: {fileID: 638903432}
   direction: {x: 0, y: 0}
   dashCooldown: 5
-  dashDuration: 0.5
+  dashDuration: 0.2
   dashSpeed: 7
   characterStats: {fileID: 0}
   hitParticle: {fileID: 988740875}

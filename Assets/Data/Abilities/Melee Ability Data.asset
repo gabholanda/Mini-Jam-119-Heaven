@@ -22,4 +22,4 @@ MonoBehaviour:
   isBoundToCaster: 0
   isInSetPosition: 1
   isCoolingDown: 0
-  cooldownDuration: 0.3
+  cooldownDuration: 0.1

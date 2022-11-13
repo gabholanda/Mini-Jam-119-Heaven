@@ -853,6 +853,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1180914619}
+    - target: {fileID: 4730070616765963150, guid: 08663a458ba7b0848b17d068d247ac8e, type: 3}
+      propertyPath: trigger
+      value: 
+      objectReference: {fileID: 11400000, guid: a088f3f549e9bce4b942efbcdb7e6fc3, type: 2}
     - target: {fileID: 5122418952004974173, guid: 08663a458ba7b0848b17d068d247ac8e, type: 3}
       propertyPath: m_Layer
       value: 3
