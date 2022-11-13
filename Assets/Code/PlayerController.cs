@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,15 +8,16 @@ public class PlayerController : MonoBehaviour
 {
     public InputReader reader;
     public Transform point;
-    public float radius = 1;
     public IMovable movable;
 
+    [Header("Movement")]
     public Vector2 direction;
     public float dashCooldown;
     public float dashDuration;
     private bool canDash = true;
     public float dashSpeed;
 
+    [Header("Stats & Skills")]
     public CharacterStats characterStats;
 
     [SerializeField]
@@ -23,6 +25,8 @@ public class PlayerController : MonoBehaviour
 
     public AbilityTrigger meleeAttack;
 
+
+    public GameObject interactable;
 
     void Awake()
     {
@@ -37,6 +41,8 @@ public class PlayerController : MonoBehaviour
         reader.Dash.performed += OnDash;
         reader.Move.performed += OnMove;
         reader.Move.canceled += OnStopMove;
+        reader.Interact.performed += OnInteract;
+        reader.Interact.Enable();
         reader.Move.Enable();
         reader.Attack.Enable();
         reader.Dash.Enable();
@@ -49,9 +55,19 @@ public class PlayerController : MonoBehaviour
         reader.Attack.performed -= OnAttack;
         reader.Move.canceled -= OnStopMove;
         reader.Dash.performed -= OnDash;
+        reader.Interact.performed -= OnInteract;
+        reader.Interact.Disable();
         reader.Move.Disable();
         reader.Attack.Disable();
         reader.Dash.Disable();
+    }
+
+    private void OnInteract(InputAction.CallbackContext obj)
+    {
+        if (interactable != null)
+        {
+            interactable.GetComponent<IInteractable>()?.Interact();
+        }
     }
 
     private void OnDash(InputAction.CallbackContext context)
@@ -78,7 +94,6 @@ public class PlayerController : MonoBehaviour
     {
         direction = new Vector2(0, 0);
         movable.SetVector(direction * characterStats.Speed);
-
     }
     private void OnAttack(InputAction.CallbackContext context)
     {
@@ -88,12 +103,6 @@ public class PlayerController : MonoBehaviour
     public void Hit()
     {
         hitParticle.Play();
-
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawSphere(point.position, radius);
     }
 
     IEnumerator CoolDown()

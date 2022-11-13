@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class DamageReceiver : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    CharacterStats characterStats;
+    public ParticleSystem onHitted;
+    private void Awake()
     {
-        
+        characterStats = GetComponent<CharacterStats>();
     }
-
-    // Update is called once per frame
-    void Update()
+    public void ReceiveDamage(int totalDamage)
     {
-        
+        characterStats.CurrentHealth -= totalDamage;
+        if (onHitted) onHitted.Play();
     }
 }

@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class DamageDealer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void DealDamage(GameObject attacker, GameObject defender, Ability ability)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        DamageReceiver receiver = defender.GetComponent<DamageReceiver>();
+        if (ability.data.onHitParticle) ability.data.onHitParticle.Play();
+        int totalDamage = (int)(ability.data.scalingCoeficient * attacker.GetComponent<CharacterStats>().Damage);
+        receiver.ReceiveDamage(totalDamage);
     }
 }
