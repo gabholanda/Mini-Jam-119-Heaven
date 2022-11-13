@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     ParticleSystem hitParticle = null;
 
     public AbilityTrigger meleeAttack;
+    private AbilityTrigger realMeleeAttack;
 
 
     public GameObject interactable;
@@ -32,7 +33,9 @@ public class PlayerController : MonoBehaviour
     {
         movable = GetComponent<IMovable>();
         characterStats = GetComponent<CharacterStats>();
-        meleeAttack.Initialize(gameObject);
+        realMeleeAttack = ScriptableObject.CreateInstance<AbilityTrigger>();
+        realMeleeAttack.DeepCopy(meleeAttack);
+        realMeleeAttack.Initialize(gameObject);
     }
 
     private void OnEnable()
@@ -97,7 +100,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnAttack(InputAction.CallbackContext context)
     {
-        meleeAttack.Fire(point.position, MouseUtils.GetMousePositionInWorld());
+        realMeleeAttack.Fire(point.position, MouseUtils.GetMousePositionInWorld());
     }
 
     public void Hit()
@@ -115,6 +118,11 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(dashDuration);
         movable.SetVector(direction * characterStats.Speed);
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.LoadScene("Floor1-Room1");
     }
 }
 

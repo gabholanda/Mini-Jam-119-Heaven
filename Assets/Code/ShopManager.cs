@@ -13,6 +13,7 @@ public class ShopManager : MonoBehaviour
     public GameObject Item3Pos;
     public GameObject Item4Pos;
 
+
     private void Awake()
     {
         ItemSO firstRandom = allItems[Random.Range(0, allItems.Count)];
@@ -29,8 +30,6 @@ public class ShopManager : MonoBehaviour
 
         ItemSO fourhtRandom = allItems[Random.Range(0, allItems.Count)];
         Instantiate(fourhtRandom.itemPrefab, Item4Pos.transform.position, Quaternion.identity);
-
-
     }
 
 }
