@@ -63,7 +63,7 @@ public class PowerUp : MonoBehaviour
         }
         if (powerUpStats.isSpeedFlat)
         {
-            playerStats.Speed += (int)powerUpStats.speed;
+            playerStats.Speed += powerUpStats.speed;
         }
         else
         {
