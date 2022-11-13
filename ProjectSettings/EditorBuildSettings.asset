@@ -9,9 +9,33 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Floor 1/Hub.unity
+    guid: 8678f1a3966ac0144bb6eaeddd85b783
+  - enabled: 1
     path: Assets/Scenes/Floor 1/Floor1-Room1.unity
     guid: 90304bcafe6d475498327b7d03a60a28
   - enabled: 1
-    path: Assets/Scenes/Floor1-Room4.unity
-    guid: 082a8a66ee50d4d4cb8dd62c19b32be3
+    path: Assets/Scenes/Floor 1/Floor1-Room2.unity
+    guid: 3c2889a8ed58f1f4eae100d0be13e44f
+  - enabled: 1
+    path: Assets/Scenes/Floor 1/Floor1-Room3-Boss.unity
+    guid: c4f4d8aa9278c5f4cbb077cdc7959f5e
+  - enabled: 1
+    path: Assets/Scenes/Floor 2/Floor2-Room1.unity
+    guid: eafce07c0bcbd6f47985af48f7218e85
+  - enabled: 1
+    path: Assets/Scenes/Floor 2/Floor2-Room2.unity
+    guid: 8f46f5f66774e1149bd2be4593a16332
+  - enabled: 1
+    path: Assets/Scenes/Floor 2/Floor2-Room3-Boss.unity
+    guid: 3d9898c16478d7b41ad82a4b23f965d2
+  - enabled: 1
+    path: Assets/Scenes/Floor 3/Floor3-Room2.unity
+    guid: c9bc2da86d27fae43ba15d56e6584535
+  - enabled: 1
+    path: Assets/Scenes/Floor 3/Floor3-Room3.unity
+    guid: ae197220bd0da9c41b0ae154137db3f6
+  - enabled: 1
+    path: Assets/Scenes/Floor 3/Floor3-Room4-Boss.unity
+    guid: 95febc499e7d94f47967c1aaa4e555b4
   m_configObjects: {}
