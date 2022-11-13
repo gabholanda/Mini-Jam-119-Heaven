@@ -28,9 +28,9 @@ public class EnemyController : MonoBehaviour
         if (distance >= 1)
         {
 
-        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, characterStats.Speed * Time.deltaTime);
-        OnAttack();
- 
+            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, characterStats.Speed * Time.deltaTime);
+            OnAttack();
+
         }
     }
     private void OnAttack()
@@ -46,9 +46,5 @@ public class EnemyController : MonoBehaviour
     public void Hit()
     {
         hitParticle.Play();
-    }
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawSphere(point.position, radius);
     }
 }
