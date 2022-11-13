@@ -13,9 +13,12 @@ public class EnemyController : MonoBehaviour
     public Transform point;
     public float radius = 1;
     [SerializeField] ParticleSystem hitParticle = null;
-    void Awake()
+    public AbilityTrigger trigger;
+   
+    protected void Awake()
     {
         characterStats = GetComponent<CharacterStats>();
+        trigger.Initialize(gameObject);
     }
     void Update()
     {
