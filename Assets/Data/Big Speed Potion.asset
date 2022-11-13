@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Big Speed Potion
   m_EditorClassIdentifier: 
   price: 1
-  description: 
+  description: "Big Speed Potion \nMajor Speed Increase"
   itemPrefab: {fileID: 4293869098805341610, guid: d6a954f575a68f74d9b86f3284a83472, type: 3}
-  sprite: {fileID: 21300000, guid: 533a508a260c1fc4f9a09e25b2a71d10, type: 3}
+  sprite: {fileID: 21300000, guid: f37496f5f27cb114dae042d1eb357409, type: 3}

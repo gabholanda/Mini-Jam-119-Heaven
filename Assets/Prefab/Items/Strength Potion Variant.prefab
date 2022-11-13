@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1673348169901697811, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
       propertyPath: m_Name
-      value: Strength Potion
+      value: Strength Potion Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1673348169901697811, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
       propertyPath: m_TagString
@@ -69,12 +69,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 75a60ea8e18919341ba93a4c8e480e9c, type: 2}
     - target: {fileID: 1673348169901697813, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ca10b003f03b5264591179ac8c3c5c06, type: 3}
+    - target: {fileID: 1673348169901697813, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
       propertyPath: m_Color.b
-      value: 0.8381417
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1673348169901697813, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
       propertyPath: m_Color.g
-      value: 0.18039213
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673348169901697813, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1673348169901697814, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
       propertyPath: m_BodyType
@@ -82,7 +90,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1673348169901697815, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
       propertyPath: m_Radius
-      value: 1.9
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 1673348169901697815, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
       propertyPath: m_Offset.x

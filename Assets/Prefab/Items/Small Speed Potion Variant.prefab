@@ -69,16 +69,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 9d2828d800b05054eac653f69900cf8a, type: 2}
     - target: {fileID: 1673348169901697813, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 53057302d25f8c54bb293c62adbcda8d, type: 3}
+    - target: {fileID: 1673348169901697813, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
       propertyPath: m_Color.b
-      value: 0.54254186
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1673348169901697813, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
       propertyPath: m_Color.g
-      value: 0.8088288
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1673348169901697813, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
       propertyPath: m_Color.r
-      value: 0.9056604
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1673348169901697814, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
       propertyPath: m_BodyType
@@ -86,7 +90,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1673348169901697815, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
       propertyPath: m_Radius
-      value: 1.9
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 1673348169901697815, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
       propertyPath: m_Offset.x
