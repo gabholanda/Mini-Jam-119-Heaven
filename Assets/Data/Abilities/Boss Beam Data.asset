@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Boss Beam Data
   m_EditorClassIdentifier: 
   color: {r: 0, g: 0, b: 0, a: 0}
-  soundFX: {fileID: 0}
+  soundFX: {fileID: 8300000, guid: 492517d2562e6b244af86f26d4faa9cd, type: 3}
+  audioSource: {fileID: 0}
+  volume: 0.5
   onHitParticle: {fileID: 0}
   onCastParticle: {fileID: 0}
   scalingCoeficient: 1

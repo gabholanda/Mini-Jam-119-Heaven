@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Melee Ability Data
   m_EditorClassIdentifier: 
   color: {r: 0, g: 0, b: 0, a: 0}
-  soundFX: {fileID: 0}
-  onHitParticle: {fileID: 0}
-  onCastParticle: {fileID: 0}
+  soundFX: {fileID: 8300000, guid: 8f11d34711b13b94ebccb640362c886b, type: 3}
+  attackAudio: {fileID: 0}
+  volume: 0.5
+  onHitParticle: {fileID: 1751515583002867145, guid: 8bfb247b76b345f4ca3da4efc2deacad, type: 3}
+  onCastParticle: {fileID: 1751515583002867145, guid: 8bfb247b76b345f4ca3da4efc2deacad, type: 3}
   scalingCoeficient: 1
   autoDestroyTimer: 1
   isProjectile: 0

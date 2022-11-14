@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FirstBossController : EnemyController
 {
+    public AudioSource source;
+    public AudioClip clip;
 
     private AbilityTrigger extraTriggerCopy;
     private AbilityTrigger extraTriggerCopy2;
@@ -201,6 +203,7 @@ public class FirstBossController : EnemyController
     public override void OnDestroy()
     {
         StopAllCoroutines();
+        source.PlayOneShot(clip);
         base.OnDestroy();
     }
 }
