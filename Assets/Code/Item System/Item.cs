@@ -8,6 +8,7 @@ public class Item : PowerUp, IInteractable
     public GameObject playerObj;
     private SpriteRenderer spriteRenderer;
     private TMPro.TextMeshPro textMesh;
+    public AudioSource source;
 
     private void Awake()
     {
@@ -21,10 +22,11 @@ public class Item : PowerUp, IInteractable
     public void Interact()
     {
         PlayerController controller = playerObj.GetComponent<PlayerController>();
-        if (controller.currency > data.price)
+        if (controller.currency >= data.price)
         {
             controller.currency -= data.price;
             OnEquip(playerObj);
+            source.Play();
             Destroy(gameObject);
         }
     }

@@ -21,16 +21,12 @@ public class PlayerController : MonoBehaviour
     public AudioSource source1;
     public AudioSource source2;
 
-    public AudioClip clip1;
-    public AudioClip clip2;
-
     [Header("Stats & Skills")]
     public CharacterStats characterStats;
 
     public AbilityTrigger meleeAttack;
     private AbilityTrigger realMeleeAttack;
-    public ParticleSystem dashParticle;
-    
+
 
     public GameObject axe;
     private Animator axeAnim;
@@ -39,7 +35,6 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        SceneManager.sceneLoaded += OnSceneLoaded;
         movable = GetComponent<IMovable>();
         characterStats = GetComponent<CharacterStats>();
         realMeleeAttack = ScriptableObject.CreateInstance<AbilityTrigger>();
@@ -60,6 +55,7 @@ public class PlayerController : MonoBehaviour
         reader.Move.Enable();
         reader.Attack.Enable();
         reader.Dash.Enable();
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
 
@@ -74,6 +70,7 @@ public class PlayerController : MonoBehaviour
         reader.Move.Disable();
         reader.Attack.Disable();
         reader.Dash.Disable();
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     private void OnInteract(InputAction.CallbackContext obj)
@@ -93,8 +90,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(CoolDown());
             StartCoroutine(DashingDuration());
 
-            source1.PlayOneShot(clip1);
-            dashParticle.Play();
+            source1.Play();
         }
     }
 
@@ -157,7 +153,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnDestroy()
     {
-        source2.PlayOneShot(clip2);
+        source2.Play();
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemies[i].GetComponent<EnemyController>().canSpawn = false;
+        }
+        SceneManager.sceneLoaded -= OnSceneLoaded;
         SceneManager.LoadScene("Hub");
     }
 }

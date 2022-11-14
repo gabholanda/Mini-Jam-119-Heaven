@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class FeatherCollecting : MonoBehaviour
 {
+    public AudioSource source;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player")) 
+        if (collision.CompareTag("Player"))
         {
             collision.GetComponent<PlayerController>().currency += 1;
-            Destroy(gameObject);    
+            source.Play();
+            Destroy(gameObject);
         }
 
 

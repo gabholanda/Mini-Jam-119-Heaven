@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a19cf3cf0195664438c2c51b4de81e5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUpStats: {fileID: 0}
+  powerUpStats: {fileID: 11400000, guid: c05e242853b881a4d9f5eb6f87e41a30, type: 2}
   OnEquipEvent:
     m_PersistentCalls:
       m_Calls: []

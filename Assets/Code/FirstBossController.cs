@@ -206,8 +206,11 @@ public class FirstBossController : EnemyController
     public override void OnDestroy()
     {
         StopAllCoroutines();
-        powerUps.SetActive(true);
-        powerUps.transform.position = transform.position;
+        if (powerUps != null)
+        {
+            powerUps.SetActive(true);
+            powerUps.transform.position = transform.position;
+        }
         source.PlayOneShot(clip);
         base.OnDestroy();
     }

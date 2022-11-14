@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
-    public delegate void OnDeathHandler();
+    public delegate void OnDeathHandler(GameObject g);
     public event OnDeathHandler OnDeathEvent;
 
     private int currentHealth;
@@ -13,7 +13,7 @@ public class CharacterStats : MonoBehaviour
         {
             if (value <= 0)
             {
-                OnDeathEvent?.Invoke();
+                OnDeathEvent?.Invoke(gameObject);
                 Destroy(gameObject);
             }
 
