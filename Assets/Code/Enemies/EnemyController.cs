@@ -14,6 +14,8 @@ public class EnemyController : MonoBehaviour
     private AbilityTrigger trigger;
     protected AbilityTrigger realTrigger;
 
+    private bool canSpawn = true;
+
     protected virtual void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -49,7 +51,15 @@ public class EnemyController : MonoBehaviour
 
     public virtual void OnDestroy()
     {
-        GetComponent<LootBag>().InstantiateLoot(transform.position);
+        if (canSpawn && GetComponent<LootBag>() != null)
+        {
+            GetComponent<LootBag>().InstantiateLoot(transform.position);
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        canSpawn = false;
     }
 
 }

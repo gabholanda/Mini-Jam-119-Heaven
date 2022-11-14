@@ -15,10 +15,11 @@ public class DamageReceiver : MonoBehaviour
     }
     public void ReceiveDamage(int totalDamage)
     {
+
         characterStats.CurrentHealth -= totalDamage;
         if (onHitted) {
-            if (source && clip) source.PlayOneShot(clip);
             onHitted.Play();
         }
+         if (source && clip) source.PlayOneShot(clip);
     }
 }

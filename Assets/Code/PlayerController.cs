@@ -32,7 +32,8 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem dashParticle;
     
 
-
+    public GameObject axe;
+    private Animator axeAnim;
     public GameObject interactable;
 
     void Awake()
@@ -44,6 +45,8 @@ public class PlayerController : MonoBehaviour
         realMeleeAttack = ScriptableObject.CreateInstance<AbilityTrigger>();
         realMeleeAttack.DeepCopy(meleeAttack);
         realMeleeAttack.Initialize(gameObject);
+
+        axeAnim = axe.GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -101,7 +104,23 @@ public class PlayerController : MonoBehaviour
         movable.SetVector(direction * characterStats.Speed);
         if (Mathf.Abs(direction.x) == 1f || Mathf.Abs(direction.y) == 1f)
         {
-            point.localPosition = direction;
+            point.localPosition = direction * 1.3f;
+            if (point.localPosition.x == 1.3f)
+            {
+                axe.transform.localRotation = Quaternion.Euler(0, 0, 90);
+            }
+            else if (point.localPosition.x == -1.3f)
+            {
+                axe.transform.localRotation = Quaternion.Euler(0, 0, -90);
+            }
+            if (point.localPosition.y == 1.3f)
+            {
+                axe.transform.localRotation = Quaternion.Euler(0, 0, 180);
+            }
+            if (point.localPosition.y == -1.3f)
+            {
+                axe.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            }
         }
     }
     private void OnStopMove(InputAction.CallbackContext context)
@@ -111,12 +130,17 @@ public class PlayerController : MonoBehaviour
     }
     private void OnAttack(InputAction.CallbackContext context)
     {
-        realMeleeAttack.Fire(point.position, MouseUtils.GetMousePositionInWorld());
+        if (!realMeleeAttack.data.isCoolingDown)
+        {
+            axeAnim.Play("Swing");
+            realMeleeAttack.Fire(point.position, MouseUtils.GetMousePositionInWorld());
+        }
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        transform.position = new Vector3(0, -1);
+        if (gameObject)
+            transform.position = new Vector3(0, -1);
     }
 
     IEnumerator CoolDown()

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71030f02d9572d044938ece36fd585de, type: 3}
   m_Name: Health Potion
   m_EditorClassIdentifier: 
-  price: 1
+  price: 2
   description: 'Health Potion
 
     Health Increase'

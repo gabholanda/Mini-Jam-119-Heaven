@@ -19,7 +19,7 @@ MonoBehaviour:
   onHitParticle: {fileID: 1751515583002867145, guid: 8bfb247b76b345f4ca3da4efc2deacad, type: 3}
   onCastParticle: {fileID: 1751515583002867145, guid: 8bfb247b76b345f4ca3da4efc2deacad, type: 3}
   scalingCoeficient: 1
-  autoDestroyTimer: 1
+  autoDestroyTimer: 10
   isProjectile: 0
   isBoundToCaster: 0
   isInSetPosition: 1

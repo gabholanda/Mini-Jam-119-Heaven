@@ -10,6 +10,8 @@ public class FirstBossController : EnemyController
     private AbilityTrigger extraTriggerCopy;
     private AbilityTrigger extraTriggerCopy2;
     private AbilityTrigger extraTriggerCopy3;
+
+    public GameObject powerUps;
     protected override void Awake()
     {
         base.Awake();
@@ -36,13 +38,13 @@ public class FirstBossController : EnemyController
         while (true)
         {
             yield return new WaitForSeconds(0.2f);
-            realTrigger.Fire(transform.position, new Vector2(-1f, 0));
+            realTrigger.Fire(transform.position, new Vector2(-10f, 8f));
             yield return new WaitForSeconds(0.01f);
-            realTrigger.Fire(transform.position + new Vector3(0, 2, 0), new Vector2(-1f, 0));
+            realTrigger.Fire(transform.position + new Vector3(0, 2, 0), new Vector2(-10f, 10f));
             yield return new WaitForSeconds(0.01f);
-            realTrigger.Fire(transform.position + new Vector3(0, 2, 0), new Vector2(1f, 0));
+            realTrigger.Fire(transform.position + new Vector3(0, 2, 0), new Vector2(10f, 10f));
             yield return new WaitForSeconds(0.01f);
-            realTrigger.Fire(transform.position, new Vector2(1, 0));
+            realTrigger.Fire(transform.position, new Vector2(10, 8f));
         }
     }
 
@@ -54,9 +56,9 @@ public class FirstBossController : EnemyController
             Vector2 left = transform.position + new Vector3(-0.7f, 0);
             Vector2 right = transform.position + new Vector3(0.7f, 0);
             yield return new WaitForSeconds(0.01f);
-            extraTriggerCopy.Fire(left, new Vector2(-0.9f, -0.2f));
+            extraTriggerCopy.Fire(left, new Vector2(-0.9f, 7.9f));
             yield return new WaitForSeconds(0.01f);
-            extraTriggerCopy.Fire(right, new Vector2(0.9f, -0.2f));
+            extraTriggerCopy.Fire(right, new Vector2(0.9f, 7.9f));
 
             yield return new WaitForSeconds(0.5f);
         }
@@ -67,12 +69,12 @@ public class FirstBossController : EnemyController
         yield return new WaitForSeconds(30f);
         while (true)
         {
-            Vector2 left = transform.position + new Vector3(-0.7f, -0.5f);
-            Vector2 right = transform.position + new Vector3(0.7f, -0.5f);
+            Vector2 left = transform.position + new Vector3(-0.7f, 0);
+            Vector2 right = transform.position + new Vector3(0.7f, 0);
             yield return new WaitForSeconds(0.01f);
-            extraTriggerCopy2.Fire(left, new Vector2(-0.7f, -0.4f));
+            extraTriggerCopy2.Fire(left, new Vector2(-0.9f, 7.7f));
             yield return new WaitForSeconds(0.01f);
-            extraTriggerCopy2.Fire(right, new Vector2(0.7f, -0.4f));
+            extraTriggerCopy2.Fire(right, new Vector2(0.9f, 7.7f));
 
             yield return new WaitForSeconds(0.5f);
         }
@@ -81,15 +83,16 @@ public class FirstBossController : EnemyController
     private IEnumerator ThirdShootingConstraint()
     {
         yield return new WaitForSeconds(45f);
-        Vector2 direction = new Vector2(0, -1f);
+        Vector2 leftDirection = new Vector2(-3, -9f);
+        Vector2 rightDirection = new Vector2(3, -9f);
         while (true)
         {
-            Vector2 left = transform.position + new Vector3(3, 0);
-            Vector2 right = transform.position + new Vector3(-3, 0);
+            Vector2 left = transform.position + new Vector3(-3, 0);
+            Vector2 right = transform.position + new Vector3(3, 0);
             yield return new WaitForSeconds(0.01f);
-            extraTriggerCopy3.Fire(left, direction);
+            extraTriggerCopy3.Fire(left, leftDirection);
             yield return new WaitForSeconds(0.01f);
-            extraTriggerCopy3.Fire(right, direction);
+            extraTriggerCopy3.Fire(right, rightDirection);
 
             yield return new WaitForSeconds(0.5f);
         }
@@ -98,12 +101,12 @@ public class FirstBossController : EnemyController
     private IEnumerator StartShottingCycle()
     {
         float time = 0f;
-        Vector2 direction = new Vector2(-1, -1);
+        Vector2 direction = new Vector2(-1f, 7.8f);
         while (time <= 5f)
         {
             realTrigger.Fire(transform.position, direction);
             yield return new WaitForSeconds(0.4f);
-            direction.x += 0.2f;
+            direction.x += 0.1f;
             time += 0.4f;
         }
 
@@ -203,6 +206,8 @@ public class FirstBossController : EnemyController
     public override void OnDestroy()
     {
         StopAllCoroutines();
+        powerUps.SetActive(true);
+        powerUps.transform.position = transform.position;
         source.PlayOneShot(clip);
         base.OnDestroy();
     }
