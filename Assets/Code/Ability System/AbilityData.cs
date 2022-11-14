@@ -9,6 +9,7 @@ public class AbilityData : ScriptableObject
     [ColorUsage(true, true)]
     public Color color;
     public AudioClip soundFX;
+    public float volume = 0.5f;
     public ParticleSystem onHitParticle;
     public ParticleSystem onCastParticle;
 
