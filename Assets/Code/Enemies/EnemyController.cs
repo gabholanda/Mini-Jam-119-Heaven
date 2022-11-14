@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class EnemyController : MonoBehaviour
 {
@@ -14,7 +10,7 @@ public class EnemyController : MonoBehaviour
     private AbilityTrigger trigger;
     protected AbilityTrigger realTrigger;
 
-    private bool canSpawn = true;
+    public bool canSpawn = true;
 
     protected virtual void Awake()
     {
@@ -33,12 +29,11 @@ public class EnemyController : MonoBehaviour
             Vector2 direction = player.transform.position - transform.position;
             direction.Normalize();
 
-            if (distance >= 1)
+            if (distance >= 2f)
             {
                 transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, characterStats.Speed * Time.deltaTime);
             }
-
-            if (distance <= 1)
+            if (distance <= 2f)
             {
                 OnAttack();
             }

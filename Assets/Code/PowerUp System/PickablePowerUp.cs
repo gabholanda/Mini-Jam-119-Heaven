@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PickablePowerUp : MonoBehaviour, IInteractable
@@ -11,8 +9,8 @@ public class PickablePowerUp : MonoBehaviour, IInteractable
     public event OnPickUpPowerUpHandler OnPickUpPowerUpEvent;
 
     public GameObject powerUpPrefab;
-
-    private bool canSpawn = true;
+    public AudioSource source;
+    public bool canSpawn = true;
 
     private GameObject playerObj;
 
@@ -29,13 +27,14 @@ public class PickablePowerUp : MonoBehaviour, IInteractable
     public void Interact()
     {
         Instantiate(powerUpPrefab, playerObj.transform);
+        source.Play();
         OnPickUpPowerUpEvent?.Invoke(gameObject);
         Destroy(gameObject);
     }
 
     private void OnDestroy()
     {
-        if (gameObject != null)
+        if (gameObject != null && OnDestroyPowerUpEvent != null)
             OnDestroyPowerUpEvent?.Invoke(gameObject);
         if (canSpawn)
         {

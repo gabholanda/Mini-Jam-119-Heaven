@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7963224984140569097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7963224984140569099}
+  - component: {fileID: 7963224984140569098}
+  m_Layer: 0
+  m_Name: Shop Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7963224984140569099
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7963224984140569097}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.031880468, y: 0.22577707, z: 12.441262}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7963224984140569098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7963224984140569097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6a751acc8d439544878f95bd236fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allItems:
+  - {fileID: 11400000, guid: cd0899e13a5a5004ba322f1a6a320086, type: 2}
+  - {fileID: 11400000, guid: 5a1d0ceaf63ba2a42ad34a55e1b6c316, type: 2}
+  - {fileID: 11400000, guid: f87276edd0197a042b8ec46e16a8bd06, type: 2}
+  - {fileID: 11400000, guid: e94266df2ffece44884d1df86cf2ad53, type: 2}
+  - {fileID: 11400000, guid: 01d1973fb744afa4f9660538d997ea2f, type: 2}
+  - {fileID: 11400000, guid: a9209cb9221e87242bff5520f201f6fe, type: 2}
+  - {fileID: 11400000, guid: 8ee380778d8a63649b32ae1fdd5b71ff, type: 2}
+  - {fileID: 11400000, guid: e1d8139209daff544b6e592b4c5d37d9, type: 2}
+  - {fileID: 11400000, guid: b40ac4cd6b009c54796e52336d7c6523, type: 2}
+  - {fileID: 11400000, guid: 6cee7813e38d5074bbad8d1537957a80, type: 2}
+  - {fileID: 11400000, guid: 3376db071d7b89041af9d6a58d1adf95, type: 2}
+  - {fileID: 11400000, guid: b9d82f435ffa47c4fb83f4dc653df404, type: 2}
+  - {fileID: 11400000, guid: e6c6313b995acfe4aaa4461e86a8f312, type: 2}
+  Item1Pos: {fileID: 0}
+  Item2Pos: {fileID: 0}
+  Item3Pos: {fileID: 0}
+  Item4Pos: {fileID: 0}

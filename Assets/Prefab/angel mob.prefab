@@ -38,7 +38,7 @@ Transform:
   m_Children:
   - {fileID: 1751515583678407703}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8716836384263951943
 SpriteRenderer:
@@ -100,7 +100,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8716836384263951946}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onHitted: {fileID: 1751515583678407705}
+  source: {fileID: 0}
 --- !u!114 &8716836384263951947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,8 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 832599d315a21a54ba037f8b610a4811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 30
-  damage: 5
+  maxHealth: 100
+  damage: 10
   speed: 1
 --- !u!114 &1003351867
 MonoBehaviour:

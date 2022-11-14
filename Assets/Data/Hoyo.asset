@@ -20,6 +20,8 @@ MonoBehaviour:
     Speed Increase
 
     Health
-    Increase'
+    Increase
+
+    Price: 1'
   itemPrefab: {fileID: 1673348169901697811, guid: d85331e34f9d4c44d9576300d5e79a6c, type: 3}
   sprite: {fileID: 21300000, guid: 4ddf8e63b00c7354dace5bbdb49bc420, type: 3}

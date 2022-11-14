@@ -19,14 +19,21 @@ public class PowerUpManager : MonoBehaviour
 
     public void OnPickUp(GameObject powerUp)
     {
+        angelicPower.GetComponent<PickablePowerUp>().OnPickUpPowerUpEvent -= OnPickUp;
+        angelicPower.GetComponent<PickablePowerUp>().OnDestroyPowerUpEvent -= OnDestroyPowerUp;
+        demonPower.GetComponent<PickablePowerUp>().OnPickUpPowerUpEvent -= OnPickUp;
+        demonPower.GetComponent<PickablePowerUp>().OnDestroyPowerUpEvent -= OnDestroyPowerUp;
 
         if (powerUp.name == "Angel")
         {
             demonPower.SetActive(false);
+            demonPower.GetComponent<PickablePowerUp>().canSpawn = false;
         }
         else
         {
             angelicPower.SetActive(false);
+            angelicPower.GetComponent<PickablePowerUp>().canSpawn = false;
+
         }
 
         passage.GetComponent<Collider2D>().enabled = true;
@@ -34,16 +41,22 @@ public class PowerUpManager : MonoBehaviour
 
     public void OnDestroyPowerUp(GameObject powerUp)
     {
+        angelicPower.GetComponent<PickablePowerUp>().OnPickUpPowerUpEvent -= OnPickUp;
+        angelicPower.GetComponent<PickablePowerUp>().OnDestroyPowerUpEvent -= OnDestroyPowerUp;
+        demonPower.GetComponent<PickablePowerUp>().OnPickUpPowerUpEvent -= OnPickUp;
+        demonPower.GetComponent<PickablePowerUp>().OnDestroyPowerUpEvent -= OnDestroyPowerUp;
         if (passage)
             passage.GetComponent<Collider2D>().enabled = true;
 
-        if (powerUp.name == "Angel")
+        if (powerUp.name == "Angel" && demonPower != null)
         {
-            demonPower?.SetActive(false);
+            demonPower.SetActive(false);
+            demonPower.GetComponent<PickablePowerUp>().canSpawn = false;
         }
-        else
+        else if (angelicPower != null)
         {
-            angelicPower?.SetActive(false);
+            angelicPower.SetActive(false);
+            angelicPower.GetComponent<PickablePowerUp>().canSpawn = false;
         }
     }
 }

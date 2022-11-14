@@ -19,9 +19,10 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    private void OnEnemyDeath()
+    private void OnEnemyDeath(GameObject dead)
     {
-        enemies.RemoveRange(0, 1);
+        dead.GetComponent<CharacterStats>().OnDeathEvent -= OnEnemyDeath;
+        enemies.Remove(dead);
         if (enemies.Count == 0)
         {
             OnAllEnemiesDeathEvent?.Invoke();

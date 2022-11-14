@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 845c27d317b2ecd4185f37779fde5c30
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/Floor 1/Hub.unity
     guid: 8678f1a3966ac0144bb6eaeddd85b783
   - enabled: 1
@@ -20,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Floor 1/Floor1-room2.unity
     guid: 3c2889a8ed58f1f4eae100d0be13e44f
+  - enabled: 1
+    path: Assets/Scenes/Floor 1/Shop1.unity
+    guid: 6303af0e65020cd4c906031c35cf9a07
   - enabled: 1
     path: Assets/Scenes/Floor 1/Floor1-Room3-Boss.unity
     guid: c4f4d8aa9278c5f4cbb077cdc7959f5e
@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Floor 2/Floor2-Room2.unity
     guid: 8f46f5f66774e1149bd2be4593a16332
   - enabled: 1
+    path: Assets/Scenes/Floor 2/Shop2.unity
+    guid: 673f1126b4aee794d8247d70330b6de6
+  - enabled: 1
     path: Assets/Scenes/Floor 2/Floor2-Room3-Boss.unity
     guid: 3d9898c16478d7b41ad82a4b23f965d2
   - enabled: 1
@@ -38,6 +41,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Floor 3/Floor3-Room3.unity
     guid: ae197220bd0da9c41b0ae154137db3f6
+  - enabled: 1
+    path: Assets/Scenes/Floor 3/Shop3.unity
+    guid: 63b41ac9592649347a76164eefb205e6
   - enabled: 1
     path: Assets/Scenes/Floor 3/Floor3-Room4-Boss.unity
     guid: 95febc499e7d94f47967c1aaa4e555b4
