@@ -15,6 +15,7 @@ public class Ability : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         abilityStats = GetComponent<CharacterStats>();
+ 
     }
 
     protected void ProjectileCollision(Collider2D collision)
@@ -51,4 +52,6 @@ public class Ability : MonoBehaviour
     {
         StopAllCoroutines();
     }
+
+
 }

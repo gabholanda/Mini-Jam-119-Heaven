@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: {r: 0, g: 0, b: 0, a: 0}
   soundFX: {fileID: 0}
+  audioSource: {fileID: 0}
+  volume: 0.5
   onHitParticle: {fileID: 0}
   onCastParticle: {fileID: 0}
   scalingCoeficient: 1

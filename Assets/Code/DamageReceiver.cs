@@ -7,6 +7,8 @@ public class DamageReceiver : MonoBehaviour
 {
     CharacterStats characterStats;
     public ParticleSystem onHitted;
+    public AudioSource source;
+    public AudioClip clip;
     private void Awake()
     {
         characterStats = GetComponent<CharacterStats>();
@@ -14,6 +16,9 @@ public class DamageReceiver : MonoBehaviour
     public void ReceiveDamage(int totalDamage)
     {
         characterStats.CurrentHealth -= totalDamage;
-        if (onHitted) onHitted.Play();
+        if (onHitted) {
+            if (source && clip) source.PlayOneShot(clip);
+            onHitted.Play();
+        }
     }
 }

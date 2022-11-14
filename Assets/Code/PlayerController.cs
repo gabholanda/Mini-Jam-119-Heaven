@@ -18,12 +18,19 @@ public class PlayerController : MonoBehaviour
     public float dashDuration;
     private bool canDash = true;
     public float dashSpeed;
+    public AudioSource source1;
+    public AudioSource source2;
+
+    public AudioClip clip1;
+    public AudioClip clip2;
 
     [Header("Stats & Skills")]
     public CharacterStats characterStats;
 
     public AbilityTrigger meleeAttack;
     private AbilityTrigger realMeleeAttack;
+    public ParticleSystem dashParticle;
+    
 
 
     public GameObject interactable;
@@ -82,6 +89,9 @@ public class PlayerController : MonoBehaviour
             movable.SetVector(characterStats.Speed * dashSpeed * direction);
             StartCoroutine(CoolDown());
             StartCoroutine(DashingDuration());
+
+            source1.PlayOneShot(clip1);
+            dashParticle.Play();
         }
     }
 
@@ -123,6 +133,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnDestroy()
     {
+        source2.PlayOneShot(clip2);
         SceneManager.LoadScene("Hub");
     }
 }
