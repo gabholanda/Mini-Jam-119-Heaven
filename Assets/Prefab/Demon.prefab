@@ -176,7 +176,7 @@ Transform:
   - {fileID: 7417814326307726620}
   - {fileID: 545208150}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7417814327434053244
 SpriteRenderer:
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  damage: 200
+  damage: 20
   speed: 6
 --- !u!114 &7417814327434053238
 MonoBehaviour:

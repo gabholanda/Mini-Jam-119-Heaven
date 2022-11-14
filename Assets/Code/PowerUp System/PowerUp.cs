@@ -3,15 +3,12 @@ using UnityEngine.Events;
 
 public class PowerUp : MonoBehaviour
 {
-    public Animator animator;
-    public Vector2 position;
     public PowerUpStats powerUpStats;
     public UnityEvent OnEquipEvent;
 
     private void Awake()
     {
         OnEquip();
-        transform.localPosition = position;
     }
 
     public void OnEquip()
@@ -24,18 +21,25 @@ public class PowerUp : MonoBehaviour
         }
         else
         {
-            float newDamage = playerStats.Damage * (powerUpStats.damage + 1.0f);
-            playerStats.Damage *= (int)newDamage;
+            playerStats.Damage = (int)(playerStats.Damage * (powerUpStats.damage / 100 + 1.0f));
         }
+
         if (powerUpStats.isHealthFlat)
         {
-            float newHealth = playerStats.Damage * (powerUpStats.damage + 1.0f);
-            playerStats.MaxHealth *= (int)newHealth;
+            playerStats.MaxHealth += (int)powerUpStats.health;
         }
+        else
+        {
+            playerStats.MaxHealth = (int)(playerStats.MaxHealth * (powerUpStats.health / 100 + 1.0f));
+        }
+
         if (powerUpStats.isSpeedFlat)
         {
-            float newSpeed = playerStats.Damage * (powerUpStats.damage + 1.0f);
-            playerStats.Speed *= newSpeed;
+            playerStats.Speed += powerUpStats.speed;
+        }
+        else
+        {
+            playerStats.Speed *= (powerUpStats.speed / 100 + 1.0f);
         }
         OnEquipEvent?.Invoke();
     }
@@ -49,32 +53,26 @@ public class PowerUp : MonoBehaviour
         }
         else
         {
-            float newDamage = playerStats.Damage * (powerUpStats.damage + 1.0f);
-            playerStats.Damage *= (int)newDamage;
+            playerStats.Damage = (int)(playerStats.Damage * (powerUpStats.damage / 100 + 1.0f));
         }
+
         if (powerUpStats.isHealthFlat)
         {
             playerStats.MaxHealth += (int)powerUpStats.health;
         }
         else
         {
-            float newHealth = playerStats.Damage * (powerUpStats.damage + 1.0f);
-            playerStats.MaxHealth *= (int)newHealth;
+            playerStats.MaxHealth = (int)(playerStats.MaxHealth * (powerUpStats.health / 100 + 1.0f));
         }
+
         if (powerUpStats.isSpeedFlat)
         {
             playerStats.Speed += powerUpStats.speed;
         }
         else
         {
-            float newSpeed = playerStats.Damage * (powerUpStats.damage + 1.0f);
-            playerStats.Speed *= newSpeed;
+            playerStats.Speed *= (powerUpStats.speed / 100 + 1.0f);
         }
         OnEquipEvent?.Invoke();
-    }
-
-    protected void OnDestroy()
-    {
-        // TODO: Give the amount of angel feathers to the player
     }
 }

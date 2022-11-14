@@ -191,8 +191,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterStats: {fileID: 3279484077927185201}
-  hitParticle: {fileID: 0}
   trigger: {fileID: 11400000, guid: 0868958f8f3f2f44c8554ecd4bb83023, type: 2}
+  powerUps: {fileID: 0}
 --- !u!1001 &3279484077827949974
 PrefabInstance:
   m_ObjectHideFlags: 0

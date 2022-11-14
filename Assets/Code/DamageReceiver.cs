@@ -13,7 +13,7 @@ public class DamageReceiver : MonoBehaviour
     }
     public void ReceiveDamage(int totalDamage)
     {
-        characterStats.CurrentHealth -= totalDamage;
         if (onHitted) onHitted.Play();
+        characterStats.CurrentHealth -= totalDamage;
     }
 }

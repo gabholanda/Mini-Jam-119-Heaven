@@ -51,7 +51,7 @@ public class EnemyController : MonoBehaviour
 
     public virtual void OnDestroy()
     {
-        if (canSpawn)
+        if (canSpawn && GetComponent<LootBag>() != null)
         {
             GetComponent<LootBag>().InstantiateLoot(transform.position);
         }

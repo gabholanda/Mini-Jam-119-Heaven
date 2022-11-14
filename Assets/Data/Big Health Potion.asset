@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71030f02d9572d044938ece36fd585de, type: 3}
   m_Name: Big Health Potion
   m_EditorClassIdentifier: 
-  price: 1
+  price: 3
   description: "Big Health Potion \nMajor Health Increase"
   itemPrefab: {fileID: 4680778926506224341, guid: 8aff21e9c77e6134b8496e8d06a0e276, type: 3}
   sprite: {fileID: 21300000, guid: 1be1d24c416ac8949a4bdd75d0dd150d, type: 3}

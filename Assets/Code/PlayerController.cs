@@ -94,20 +94,20 @@ public class PlayerController : MonoBehaviour
         movable.SetVector(direction * characterStats.Speed);
         if (Mathf.Abs(direction.x) == 1f || Mathf.Abs(direction.y) == 1f)
         {
-            point.localPosition = direction;
-            if (point.localPosition.x == 1f)
+            point.localPosition = direction * 1.3f;
+            if (point.localPosition.x == 1.3f)
             {
                 axe.transform.localRotation = Quaternion.Euler(0, 0, 90);
             }
-            else if (point.localPosition.x == -1f)
+            else if (point.localPosition.x == -1.3f)
             {
                 axe.transform.localRotation = Quaternion.Euler(0, 0, -90);
             }
-            if (point.localPosition.y == 1f)
+            if (point.localPosition.y == 1.3f)
             {
                 axe.transform.localRotation = Quaternion.Euler(0, 0, 180);
             }
-            if (point.localPosition.y == -1f)
+            if (point.localPosition.y == -1.3f)
             {
                 axe.transform.localRotation = Quaternion.Euler(0, 0, 0);
             }
@@ -123,13 +123,14 @@ public class PlayerController : MonoBehaviour
         if (!realMeleeAttack.data.isCoolingDown)
         {
             axeAnim.Play("Swing");
-            realMeleeAttack.Fire(point.position *2, MouseUtils.GetMousePositionInWorld());
+            realMeleeAttack.Fire(point.position, MouseUtils.GetMousePositionInWorld());
         }
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        transform.position = new Vector3(0, -1);
+        if (gameObject)
+            transform.position = new Vector3(0, -1);
     }
 
     IEnumerator CoolDown()
